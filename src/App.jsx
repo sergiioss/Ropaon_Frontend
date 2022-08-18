@@ -6,6 +6,8 @@ import Login from "./Containers/User/Login/Login"
 import Register from "./Containers/User/Register/Register"
 import Header from "./Components/Header/Header"
 import Footer from "./Components/Footer/Footer"
+import Female from "./Containers/Female/Female"
+import Male from "./Containers/Male/Male"
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
           <Route path="/admin" element={<Admin/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
+          <Route path="/female" element={<Female/>}/>
+          <Route path="/male" element={<Male/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

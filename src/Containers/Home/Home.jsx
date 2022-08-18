@@ -5,7 +5,7 @@ import axios from "axios"
 const Home = (props) => {
 
     return(
-        <div>
+        <div className="home">
             <h1>Vista Home</h1>
         </div>
     )

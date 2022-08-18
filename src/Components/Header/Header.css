@@ -1,0 +1,35 @@
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color:white;
+    height: 8em;
+    width: 100vw;
+}
+.menu{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: rgb(241, 122, 122);
+    color: white;
+    height: 5em;
+    width: 100vw;
+}
+.submenu{
+    color: white;
+    margin-left: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3em;
+    width: auto;
+}
+.navlink{
+    all: unset;
+    font-size: 1.7em;
+    cursor:pointer;
+}
+.navlink:hover{
+    color:black
+}
