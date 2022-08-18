@@ -5,7 +5,7 @@ import axios from "axios"
 const Register = (props) => {
 
     return(
-        <div>
+        <div className="register">
             <h1>Vista Register</h1>
         </div>
     )

@@ -1,6 +1,7 @@
 import React from "react"
 import "./Header.css"
 import { NavLink } from "react-router-dom"
+import img from "../../assets/logoProyecto.png"
 
 const Header = props => {
 
@@ -8,7 +9,7 @@ const Header = props => {
 
         <div>
             <div className="header">
-                HEADER
+                <img className="logo" src={img} />
             </div>
             <div className="menu">
                 <div className="submenu">
@@ -21,7 +22,7 @@ const Header = props => {
                     <NavLink className="navlink" to="/male">Hombre</NavLink>
                 </div>
                 <div className="submenu">
-                    HOLAQUETAl
+                    <NavLink className="navlink" to="/boy">Niño</NavLink>
                 </div>
             </div>
         </div>

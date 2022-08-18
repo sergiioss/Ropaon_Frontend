@@ -8,6 +8,8 @@ import Header from "./Components/Header/Header"
 import Footer from "./Components/Footer/Footer"
 import Female from "./Containers/Female/Female"
 import Male from "./Containers/Male/Male"
+import Boy from "./Containers/Boy/Boy"
+
 
 function App() {
 
@@ -22,6 +24,7 @@ function App() {
           <Route path="/register" element={<Register/>}/>
           <Route path="/female" element={<Female/>}/>
           <Route path="/male" element={<Male/>}/>
+          <Route path="/boy" element={<Boy/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

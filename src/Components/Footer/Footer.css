@@ -2,8 +2,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: red;
+    background-color: blue;
     color:white;
-    height: 5em;
+    height: 8em;
     width: 100vw;
 }

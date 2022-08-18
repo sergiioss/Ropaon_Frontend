@@ -1,8 +1,8 @@
 .header{
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    background-color: red;
+    background-color: blue;
     color:white;
     height: 8em;
     width: 100vw;
@@ -11,7 +11,7 @@
     display: flex;
     justify-content: left;
     align-items: center;
-    background-color: rgb(241, 122, 122);
+    background-color: black;
     color: white;
     height: 5em;
     width: 100vw;
@@ -31,5 +31,10 @@
     cursor:pointer;
 }
 .navlink:hover{
-    color:black
+    color:red;
+}
+.logo{
+    width: 10em;
+    height: 10em;
+    margin-left:2em;
 }
