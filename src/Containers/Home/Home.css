@@ -6,6 +6,6 @@
     flex-wrap: wrap;
     background-color: white;
     color: black;
-    height: 75vh;   
+    height: auto;   
     width: 100vw;
 }    

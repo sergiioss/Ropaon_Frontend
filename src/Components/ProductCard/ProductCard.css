@@ -1,11 +1,12 @@
 .Productcard {
     padding: 1em;
     margin: 1em;
-    background-color: #e6aa13;
+    background-color: white;
     border-radius: 1em;
+    flex-wrap: wrap;
     border: .2em solid black;
     width: 20em;
-    height: 20em;
+    height: auto;
 }
 .ntitulo{
     font-size: 1.8em;
@@ -14,4 +15,8 @@
     height: 26em;
     width: 20em;
     padding: 1em;
+}
+.foto{
+    width: 15em;
+    height: 18em;
 }
