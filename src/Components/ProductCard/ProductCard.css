@@ -1,22 +1,7 @@
-.Productcard {
-    padding: 1em;
-    margin: 1em;
-    background-color: white;
-    border-radius: 1em;
-    flex-wrap: wrap;
-    border: .2em solid black;
-    width: 20em;
-    height: auto;
-}
-.ntitulo{
-    font-size: 1.8em;
-}
-.products{
-    height: 26em;
-    width: 20em;
-    padding: 1em;
-}
 .foto{
-    width: 15em;
-    height: 18em;
+    height: 10em;
+}
+
+.card-global{
+    margin-bottom: 1em;
 }
