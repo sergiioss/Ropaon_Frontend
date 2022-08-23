@@ -10,6 +10,7 @@ import Female from "./Containers/Female/Female"
 import Male from "./Containers/Male/Male"
 import Boy from "./Containers/Boy/Boy"
 import Ftitulo from "./Containers/Ftitulo/Ftitulo"
+import Profile from "./Containers/Profile/Profile"
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/male" element={<Male/>}/>
           <Route path="/boy" element={<Boy/>}/>
           <Route path="/ftitulo" element={<Ftitulo/>}/>
+          <Route path="/profile" element={<Profile/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

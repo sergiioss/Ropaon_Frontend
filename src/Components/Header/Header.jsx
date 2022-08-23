@@ -3,7 +3,8 @@ import "./Header.css"
 import { NavLink, useNavigate } from "react-router-dom"
 import img from "../../assets/logoProyecto.png"
 import img2 from "../../assets/logocarrito.png"
-import img3 from "../../assets/logologin.png"   
+import img3 from "../../assets/logologin.png"
+
 
 const Header = props => {
 
@@ -22,7 +23,7 @@ const Header = props => {
                 <img className="logo" src={img} />
                 <input className="listInput" onKeyPress={cambioPagina} placeholder="Busqueda por articulo..." type="text" name="titulo" />
                 <img className="carrito" src={img2}/>
-                <img className="login" src={img3}/>
+                <NavLink className="ilogin" to="/login"><img className="login" src={img3}/></NavLink>
             </div>
             <div className="menu">
                 <div className="submenu">

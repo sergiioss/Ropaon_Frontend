@@ -1,0 +1,10 @@
+.profile{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+    background-color: aquamarine;
+    color: black;
+    height: 80vh;
+    width: 100vw;
+}
