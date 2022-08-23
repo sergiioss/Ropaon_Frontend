@@ -5,8 +5,8 @@ import axios from "axios"
 const Admin = (props) => {
 
     return(
-        <div>
-            <h1>Vista Admin</h1>
+        <div className="admin">
+            <h1>Vista Adm</h1>
         </div>
     )
 }

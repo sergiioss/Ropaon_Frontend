@@ -6,6 +6,11 @@ import Login from "./Containers/User/Login/Login"
 import Register from "./Containers/User/Register/Register"
 import Header from "./Components/Header/Header"
 import Footer from "./Components/Footer/Footer"
+import Female from "./Containers/Female/Female"
+import Male from "./Containers/Male/Male"
+import Boy from "./Containers/Boy/Boy"
+import Ftitulo from "./Containers/Ftitulo/Ftitulo"
+
 
 function App() {
 
@@ -18,6 +23,10 @@ function App() {
           <Route path="/admin" element={<Admin/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
+          <Route path="/female" element={<Female/>}/>
+          <Route path="/male" element={<Male/>}/>
+          <Route path="/boy" element={<Boy/>}/>
+          <Route path="/ftitulo" element={<Ftitulo/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

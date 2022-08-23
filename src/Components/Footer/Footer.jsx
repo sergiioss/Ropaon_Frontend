@@ -1,5 +1,6 @@
 import React from "react"
 import "./Footer.css"
+import img from "../../assets/logoProyecto.png"
 
 const Footer = props => {
 
@@ -7,7 +8,7 @@ const Footer = props => {
 
         <div className="footer">
             <div>
-                HOLA SOY EL FOOTER
+                <img className="logo" src={img}/>
             </div>
         </div>
     )
