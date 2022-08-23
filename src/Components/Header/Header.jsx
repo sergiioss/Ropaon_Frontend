@@ -1,15 +1,28 @@
 import React from "react"
 import "./Header.css"
-import { NavLink } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import img from "../../assets/logoProyecto.png"
+import img2 from "../../assets/logocarrito.png"
+import img3 from "../../assets/logologin.png"   
 
 const Header = props => {
+
+    const navegador = useNavigate();
+    const cambioPagina = (event) => {
+        if(event.key === "Enter") {
+            /* dispatch(peliculasFiltradas(event.target.value)) */
+            navegador("/ftitulo");
+        }  
+    }
 
     return (
 
         <div>
             <div className="header">
                 <img className="logo" src={img} />
+                <input className="listInput" onKeyPress={cambioPagina} placeholder="Busqueda por articulo..." type="text" name="titulo" />
+                <img className="carrito" src={img2}/>
+                <img className="login" src={img3}/>
             </div>
             <div className="menu">
                 <div className="submenu">

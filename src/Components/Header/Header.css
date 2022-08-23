@@ -38,3 +38,19 @@
     height: 10em;
     margin-left:2em;
 }
+.listInput{
+    width: 20em;
+    height: 2em;
+    margin-left: 10em;
+}
+.carrito{
+    height: 3em;
+    width: 3em;
+    margin-left: 35em;
+}
+.login{
+    height: 3em;
+    width: 3em;
+    margin-left:7em;
+    background-color: blue;
+}
