@@ -31,7 +31,7 @@ const Header = props => {
                 <div className="header">
                     <img className="logo" src={img} />
                     <input className="listInput" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
-                    <img className="carrito" src={img2} />
+                    <img className="carrito" src={img2}></img>
                     <NavLink className="ilogin" to="/login"><img className="login" src={img3} /></NavLink>
                 </div>
                 <div className="menu">
@@ -57,7 +57,7 @@ const Header = props => {
                 <div className="header">
                     <img className="logo" src={img} />
                     <input className="listInput" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
-                    <img className="carrito" src={img2} />
+                    <NavLink to="/Purchase"><img className="carrito" src={img2}></img></NavLink>
                     <span>Bienvenido, {credenciales.user.name}<br></br>
                     <NavLink className="navlinkp" to="/Profile">Mi perfil</NavLink></span>
                 </div>

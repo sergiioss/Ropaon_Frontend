@@ -8,6 +8,8 @@
     color: black;
     height: auto;   
     width: 100vw;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }    
 .ftituloe{
     display: flex;
@@ -19,4 +21,6 @@
     color: red;
     height: 75vh;   
     width: 100vw;
+    margin-bottom: 1em;
+    margin-top: 1em;
 }  

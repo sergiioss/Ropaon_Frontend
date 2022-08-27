@@ -1,0 +1,11 @@
+.purchase{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: white;
+    color: black;
+    height: 75vh;   
+    width: 100vw;
+}    

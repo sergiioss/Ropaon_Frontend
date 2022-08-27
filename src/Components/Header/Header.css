@@ -70,3 +70,8 @@
     color:red;
     
 }
+.carrito:hover{
+    height: 3.5em;
+    width: 3.5em;
+    transition: 1s;
+}
