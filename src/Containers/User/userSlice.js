@@ -5,7 +5,8 @@ import jwt from 'jwt-decode';
 export const userSlice = createSlice({
     name: 'usuario',
     initialState:{
-        token: ""
+        token: "",
+        user: "",
     },
     reducers:{
         login: (state, action) => {
@@ -29,7 +30,7 @@ export const userSlice = createSlice({
                 isRegister: true,
                 successMessage: 'Te has registrado correctamente'
             }
-        }
+        },
     },
 });
 
@@ -40,7 +41,8 @@ export const loginUsuario = (body) => async (dispatch) => {
         if(user.status === 200){
             dispatch(login({
                 ...decodificarToken,
-                token: user.data.token
+                token: user.data.token,
+                user: user.data.user
             }))
         }
 

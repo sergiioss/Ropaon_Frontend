@@ -6,6 +6,17 @@
     flex-wrap: wrap;
     background-color: white;
     color: black;
-    height: 75vh;   
+    height: auto;   
     width: 100vw;
 }    
+.buttonr{
+    margin-bottom: 1em;
+    width: 7em;
+    height: 2.5em;
+}
+.msgIsError{
+    color: red;
+}
+.mb-3{
+    width: 17em;
+}

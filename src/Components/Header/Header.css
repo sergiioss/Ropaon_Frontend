@@ -47,6 +47,7 @@
     height: 3em;
     width: 3em;
     margin-left: 35em;
+    margin-right: 2em;
 }
 .login{
     height: 3em;
@@ -58,4 +59,14 @@
     height: 3.5em;
     width: 3.5em;
     transition: 1s;
+}
+.navlinkp{
+    all:unset;
+    font-size: 1.6em;
+    cursor:pointer;
+    
+}
+.navlinkp:hover{
+    color:red;
+    
 }

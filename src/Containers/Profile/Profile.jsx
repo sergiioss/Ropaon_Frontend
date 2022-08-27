@@ -11,14 +11,13 @@ const Profile = props => {
     const credenciales = useSelector(selectDatosUsuario)
     const dispatch = useDispatch()
     const navegador = useNavigate()
-    console.log(credenciales.user)
 
     return (
         <div className="profile">
             <p>Hola perfil</p>
-            {/* <p>Nombre:{credenciales.user.name}</p><br></br>
+            <p>Nombre:{credenciales.user.name}</p><br></br>
             <p>E-mail:{credenciales.user.email}</p><br></br>
-            <p>Telefono:{credenciales.user.addres}</p> */}
+            <p>Telefono:{credenciales.user.addres}</p>
 
             <div>
                 <div className="sendButton" onClick={()=>{
