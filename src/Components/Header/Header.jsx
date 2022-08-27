@@ -4,8 +4,9 @@ import { NavLink, useNavigate } from "react-router-dom"
 import img from "../../assets/logoProyecto.png"
 import img2 from "../../assets/logocarrito.png"
 import img3 from "../../assets/logologin.png"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
 import { selectDatosUsuario } from "../../Containers/User/userSlice"
+import { productos } from "../../Containers/Ftitulo/ftituloSlice"
 
 
 
@@ -13,9 +14,11 @@ const Header = props => {
 
     const navegador = useNavigate();
     const credenciales = useSelector(selectDatosUsuario);
-    const cambioPagina = (event) => {
+    const dispatch = useDispatch();
+
+    const changePage = (event) => {
         if (event.key === "Enter") {
-            /* dispatch(peliculasFiltradas(event.target.value)) */
+            dispatch(productos(event.target.value))
             navegador("/ftitulo");
         }
     }
@@ -27,7 +30,7 @@ const Header = props => {
             <div>
                 <div className="header">
                     <img className="logo" src={img} />
-                    <input className="listInput" onKeyPress={cambioPagina} placeholder="Busqueda por articulo..." type="text" name="titulo" />
+                    <input className="listInput" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
                     <img className="carrito" src={img2} />
                     <NavLink className="ilogin" to="/login"><img className="login" src={img3} /></NavLink>
                 </div>
@@ -53,7 +56,7 @@ const Header = props => {
         <div>
                 <div className="header">
                     <img className="logo" src={img} />
-                    <input className="listInput" onKeyPress={cambioPagina} placeholder="Busqueda por articulo..." type="text" name="titulo" />
+                    <input className="listInput" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
                     <img className="carrito" src={img2} />
                     <span>Bienvenido, {credenciales.user.name}<br></br>
                     <NavLink className="navlinkp" to="/Profile">Mi perfil</NavLink></span>

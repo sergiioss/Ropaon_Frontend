@@ -6,7 +6,7 @@ export const userSlice = createSlice({
     name: 'usuario',
     initialState:{
         token: "",
-        user: ""
+        user: "",
     },
     reducers:{
         login: (state, action) => {
@@ -30,7 +30,7 @@ export const userSlice = createSlice({
                 isRegister: true,
                 successMessage: 'Te has registrado correctamente'
             }
-        }
+        },
     },
 });
 

@@ -5,8 +5,6 @@ import "./Home.css"
 import axios from "axios"
 import ProductCard from "../../Components/ProductCard/ProductCard"
 
-
-
 const Home = (props) => {
 
     const [products, setProducts] = useState({
@@ -29,9 +27,9 @@ const Home = (props) => {
     <Container className="home">
         <Row>
             {
-                products.prod.map((prod, index) => (
-                    <Col key={index} xs={6} sm={6} md={4} xl={2}>
-                        <ProductCard data={prod} key={index}/>
+                products.prod.map((prod, i) => (
+                    <Col key={i} xs={6} sm={6} md={4} xl={2}>
+                        <ProductCard data={prod} key={i}/>
                     </Col>
                 ))
             }
