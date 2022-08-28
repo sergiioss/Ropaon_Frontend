@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { selectDatosUsuario } from "../../Containers/User/userSlice"
-import { arrayPurchase } from "../../Containers/Purchase/purchaseSlice";
+import { arrayPurchase, deletePurchase } from "../../Containers/Purchase/purchaseSlice";
 
 const ProductCard = props => {
     const dispatch = useDispatch();
@@ -57,6 +57,9 @@ const ProductCard = props => {
                                 </Card.Text>
                                 {props.buy != 1 && <Button onClick={() => {dispatch(arrayPurchase(props.data))}}>
                                     Comprar
+                                </Button>}
+                                {props.buy == 1 && <Button onClick={()=> {dispatch(deletePurchase(props.data))}}>
+                                   Eliminar
                                 </Button>}
                             </Card.Body>
                         </Card>

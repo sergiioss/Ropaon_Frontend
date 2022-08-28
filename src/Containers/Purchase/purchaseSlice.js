@@ -10,11 +10,14 @@ export const purchaseSlice = createSlice({
         arrayPurchase: (state, action) => {
             state.Purchase.push(action.payload)
         },
+        /* deletePurchase: (state, action) => {
+            state.Purchase.shift()(action.payload)
+        }, */
     },
 });
 
 
-export const { arrayPurchase } = purchaseSlice.actions
+export const { arrayPurchase, deletePurchase } = purchaseSlice.actions
 
 export const selectPurchase = (state) => state.purchase
 
