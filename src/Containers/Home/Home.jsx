@@ -28,7 +28,7 @@ const Home = (props) => {
         <Row>
             {
                 products.prod.map((prod, i) => (
-                    <Col key={i} xs={6} sm={6} md={4} xl={2}>
+                    <Col key={i} xs={6} sm={6} md={4} xl={2} className="img-fluid minw">
                         <ProductCard data={prod} key={i}/>
                     </Col>
                 ))

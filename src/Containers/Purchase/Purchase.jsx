@@ -12,7 +12,7 @@ const Purchase = (props) => {
         <Row>
             {
                 purch.Purchase.map((purchase, i) => (
-                    <Col key={i} xs={6} sm={6} md={4} xl={2}>
+                    <Col key={i} xs={6} sm={6} md={4} xl={2} className="minw">
                         <ProductCard data={purchase} key={i} buy="1"/>
                     </Col>
                 ))

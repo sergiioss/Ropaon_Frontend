@@ -14,9 +14,9 @@ const ProductCard = props => {
 
     if (!credenciales?.token) {
         return (
-            <Row xs={1} md={1} className="g-4 img-fluid">
+            <Row xs={1} md={3} className="g-4 img-fluid">
                 {Array.from({ length: 1 }).map((_, idx) => (
-                    <Col key={idx}>
+                    <Col key={idx} className="card-cont">
                         <Card className="card-global">
                             <Card.Body className="card">
                                 <Card.Title>{props.data.name}</Card.Title>
@@ -39,9 +39,9 @@ const ProductCard = props => {
         );
     } else {
         return (
-            <Row xs={1} md={1} className="g-4 img-fluid">
+            <Row xs={1} md={3} className="g-4 img-fluid">
                 {Array.from({ length: 1 }).map((_, idx) => (
-                    <Col key={idx}>
+                    <Col key={idx} className="card-cont">
                         <Card className="card-global">
                             <Card.Body className="card">
                                 <Card.Title>{props.data.name}</Card.Title>

@@ -25,7 +25,7 @@ const Male = (props) => {
             <Row>
                 {
                     productMale.male.map((male, index) => (
-                        <Col key={index} xs={6} sm={6} md={4} xl={2}>
+                        <Col key={index} xs={6} sm={6} md={4} xl={2} className="minw">
                             <ProductCard data={male} key={index} />
                         </Col>
                     ))

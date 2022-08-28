@@ -8,3 +8,10 @@
 .purchase{
     color:red;
 }
+.g-4{
+    min-width: 15em;
+}
+.card-cont{
+    min-width: 15em;
+    max-width: 15em;
+}
