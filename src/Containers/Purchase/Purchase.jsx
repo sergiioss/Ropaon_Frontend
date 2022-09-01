@@ -1,12 +1,14 @@
 import React, {useState, useEffect} from "react"
 import "./Purchase.css"
 import {Container, Row, Col} from "react-bootstrap"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { selectPurchase } from "./purchaseSlice"
 import ProductCard from "../../Components/ProductCard/ProductCard"
 
 const Purchase = (props) => {
-    const purch = useSelector(selectPurchase)
+    const dispatch = useDispatch();
+    const purch = useSelector(selectPurchase);
+
     return(
         <Container className="home">
         <Row>

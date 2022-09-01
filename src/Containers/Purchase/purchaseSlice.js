@@ -4,20 +4,18 @@ import axios from 'axios';
 export const purchaseSlice = createSlice({
     name: 'purchase',
     initialState: {
-        Purchase: []
+        Purchase: [],
+        id:[]
     },
     reducers: {
         arrayPurchase: (state, action) => {
             state.Purchase.push(action.payload)
+        }
         },
-        /* deletePurchase: (state, action) => {
-            state.Purchase.shift()(action.payload)
-        }, */
     },
-});
+);
 
-
-export const { arrayPurchase, deletePurchase } = purchaseSlice.actions
+export const { arrayPurchase } = purchaseSlice.actions
 
 export const selectPurchase = (state) => state.purchase
 

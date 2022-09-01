@@ -6,12 +6,19 @@ import Row from 'react-bootstrap/Row';
 import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { selectDatosUsuario } from "../../Containers/User/userSlice"
-import { arrayPurchase, deletePurchase } from "../../Containers/Purchase/purchaseSlice";
+import { arrayPurchase } from "../../Containers/Purchase/purchaseSlice";
+import { useState } from "react";
 
 const ProductCard = props => {
     const dispatch = useDispatch();
     const credenciales = useSelector(selectDatosUsuario);
 
+    let [evento, setEvento] = useState([])
+
+    const deleteItem = (event) => (dispatch) =>{
+        setEvento(event)
+    }
+    
     if (!credenciales?.token) {
         return (
             <Row xs={1} md={3} className="g-4 img-fluid">
@@ -37,7 +44,7 @@ const ProductCard = props => {
             </Row>
 
         );
-    } else {
+    } else if(props.data.id !== evento){
         return (
             <Row xs={1} md={3} className="g-4 img-fluid">
                 {Array.from({ length: 1 }).map((_, idx) => (
@@ -55,18 +62,17 @@ const ProductCard = props => {
                                 <Card.Text>
                                     Precio: {props.data.product_price},99 €
                                 </Card.Text>
-                                {props.buy != 1 && <Button onClick={() => {dispatch(arrayPurchase(props.data))}}>
+                                {props.buy != 1 && <Button onClick={() => { dispatch(arrayPurchase(props.data)) }}>
                                     Comprar
                                 </Button>}
-                                {props.buy == 1 && <Button onClick={()=> {dispatch(deletePurchase(props.data))}}>
-                                   Eliminar
+                                {props.buy == 1 && <Button onClick={() => { dispatch(deleteItem(props.data.id)) }}>
+                                    Eliminar
                                 </Button>}
                             </Card.Body>
                         </Card>
                     </Col>
                 ))}
             </Row>
-
         );
     }
 
