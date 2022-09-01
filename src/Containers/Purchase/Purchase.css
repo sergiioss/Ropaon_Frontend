@@ -1,4 +1,4 @@
-.home{
+.purchase{
     display: flex;
     justify-content:center;
     align-items: center;
@@ -6,11 +6,9 @@
     flex-wrap: wrap;
     background-color: white;
     color: black;
-    height: auto;   
+    height: 75vh;   
     width: 100vw;
-    margin-bottom: 1em;
-    margin-top: 1em;
-}    
+} 
 .minw{
     min-width: 15em;
-}
+}   

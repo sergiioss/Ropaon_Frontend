@@ -24,11 +24,11 @@ const Female = (props) => {
 
 
     return(
-        <Container className="home">
+        <Container className="female">
         <Row>
             {
                 productFemale.female.map((female, index) => (
-                    <Col key={index} xs={6} sm={6} md={4} xl={4}>
+                    <Col key={index} xs={6} sm={6} md={4} xl={2} className="minw">
                         <ProductCard data={female} key={index}/>
                     </Col>
                 ))

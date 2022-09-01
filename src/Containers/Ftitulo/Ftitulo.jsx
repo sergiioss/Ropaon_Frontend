@@ -25,7 +25,7 @@ const Ftitulo = (props) => {
             <Container className="ftitulo">
                 <Row>
                     {ADIOS.prod.prod.map((prod, i) => (
-                        <Col key={i} xs={6} sm={6} md={4} xl={4} className="img-fluid">
+                        <Col key={i} xs={6} sm={6} md={4} xl={2} className="img-fluid minw">
                             <ProductCard data={prod} />
                         </Col>
                     ))
