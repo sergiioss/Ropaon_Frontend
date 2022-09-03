@@ -44,7 +44,7 @@ const ProductCard = props => {
             </Row>
 
         );
-    } else if(props.data.id !== evento){
+    }else if(props.data.id !== evento){
         return (
             <Row xs={1} md={3} className="g-4 img-fluid">
                 {Array.from({ length: 1 }).map((_, idx) => (

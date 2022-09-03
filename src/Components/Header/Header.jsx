@@ -51,9 +51,36 @@ const Header = props => {
             </div>
 
         )
-    }else{
+    }else if(credenciales.user.id === 7){
         return(
         <div>
+                <div className="header">
+                    <img className="logo" src={img} />
+                    <input className="listInput" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
+                    <NavLink className="navlinkp" to="/admin">Admin</NavLink>
+                    <NavLink to="/Purchase"><img className="carrito" src={img2}></img></NavLink>
+                    <span>Bienvenido, {credenciales.user.name}<br></br>
+                    <NavLink className="navlinkp" to="/Profile">Mi perfil</NavLink></span>
+                </div>
+                <div className="menu">
+                    <div className="submenu">
+                        <NavLink className="navlink" to="/">Home</NavLink>
+                    </div>
+                    <div className="submenu">
+                        <NavLink className="navlink" to="/female">Mujer</NavLink>
+                    </div>
+                    <div className="submenu">
+                        <NavLink className="navlink" to="/male">Hombre</NavLink>
+                    </div>
+                    <div className="submenu">
+                        <NavLink className="navlink" to="/boy">Niño</NavLink>
+                    </div>
+                </div>
+            </div>
+        )
+    }else{
+        return(
+            <div>
                 <div className="header">
                     <img className="logo" src={img} />
                     <input className="listInput" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
