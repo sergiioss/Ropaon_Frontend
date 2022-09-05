@@ -1,4 +1,3 @@
-
 import React from "react"
 import { useState } from "react"
 import { Form, Button, Row, Col } from 'react-bootstrap'
@@ -6,9 +5,6 @@ import { useDispatch} from 'react-redux'
 import { registerUser} from '../userSlice'
 import { useNavigate } from 'react-router-dom'
 import "./Register.css"
-
-
-
 
 const Register = props => {
     const dispatch = useDispatch()
@@ -22,7 +18,6 @@ const Register = props => {
         password: '',
         msgIsError: '',
     })
-
 
     const handleInput = (event) => {
         setRegister({
@@ -111,7 +106,6 @@ const Register = props => {
             }, 1200)
             return;
         };
-        console.log(typeof(register.email));
 
         setMsgError('Te has registrado correctamente');
 

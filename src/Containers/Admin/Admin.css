@@ -1,11 +1,24 @@
-.admin{
+.containeradmin{
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
-    flex-wrap: wrap;
-    background-color: white;
-    color: black;
-    height: 75vh;   
-    width: 100vw;
-}    
+} 
+.msgIsError{
+    color: red;
+}
+.mb-3{
+    width: 7em;
+    margin-right: 10em;
+}
+
+.cbutton{
+    width: 12em;
+    margin-bottom: 4em;
+}
+.navlink{
+    all:unset;
+    font-size: 0.75em;
+    cursor:pointer;
+    
+}
