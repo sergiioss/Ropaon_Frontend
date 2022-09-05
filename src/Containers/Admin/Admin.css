@@ -16,3 +16,9 @@
     width: 12em;
     margin-bottom: 4em;
 }
+.navlink{
+    all:unset;
+    font-size: 0.75em;
+    cursor:pointer;
+    
+}
