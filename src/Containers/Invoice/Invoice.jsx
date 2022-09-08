@@ -3,8 +3,7 @@ import "./Invoice.css"
 import { Container, Row, Col } from "react-bootstrap"
 import axios from "axios"
 import { useDispatch, useSelector } from "react-redux"
-import { newCount, selectPurchase } from "../Purchase/purchaseSlice"
-import Product_Invoice from "../../Components/Product_Invoice/Product_Invoice"
+import { selectPurchase } from "../Purchase/purchaseSlice"
 import Table from "react-bootstrap/Table"
 
 const Invoice = (props) => {

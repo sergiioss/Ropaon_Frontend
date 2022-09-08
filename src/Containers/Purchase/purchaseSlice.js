@@ -17,27 +17,11 @@ export const purchaseSlice = createSlice({
                 Purchase: []
             }
         },
-        addSum: (state, action) => {
-            return{
-                ...state,
-                newSum : action.payload
-            }
-        },
     },
 },);
 
-export const newCount = (event) => async (dispatch) => {
-    try{
-        console.log(event);
-            dispatch(addSum({
-                newSum: event
-            }))
-    }catch (error){
-        console.log(error)
-    }
-};
 
-export const { arrayPurchase, deletePurchase, addSum } = purchaseSlice.actions
+export const { arrayPurchase, deletePurchase } = purchaseSlice.actions
 
 export const selectPurchase = (state) => state.purchase
 
