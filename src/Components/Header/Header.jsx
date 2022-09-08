@@ -44,9 +44,6 @@ const Header = props => {
                     <div className="submenu">
                         <NavLink className="navlink" to="/male">Hombre</NavLink>
                     </div>
-                    <div className="submenu">
-                        <NavLink className="navlink" to="/boy">Niño</NavLink>
-                    </div>
                 </div>
             </div>
 
@@ -72,9 +69,6 @@ const Header = props => {
                     <div className="submenu">
                         <NavLink className="navlink" to="/male">Hombre</NavLink>
                     </div>
-                    <div className="submenu">
-                        <NavLink className="navlink" to="/boy">Niño</NavLink>
-                    </div>
                 </div>
             </div>
         )
@@ -97,9 +91,6 @@ const Header = props => {
                     </div>
                     <div className="submenu">
                         <NavLink className="navlink" to="/male">Hombre</NavLink>
-                    </div>
-                    <div className="submenu">
-                        <NavLink className="navlink" to="/boy">Niño</NavLink>
                     </div>
                 </div>
             </div>

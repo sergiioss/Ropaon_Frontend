@@ -15,3 +15,14 @@
     min-width: 15em;
     max-width: 15em;
 }
+.fotocompra{
+    width: 2em;
+    height: 4em;
+}
+.cardcompra{
+    all:unset;
+    width: 10em;
+}
+.card-globalc{
+    all:unset;
+}

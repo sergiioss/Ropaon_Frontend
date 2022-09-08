@@ -1,4 +1,4 @@
-.boy{
+.Product_Invoice{
     display: flex;
     justify-content:center;
     align-items: center;
@@ -8,4 +8,17 @@
     color: black;
     height: 75vh;   
     width: 100vw;
-}    
+}  
+/* .fotoinvoice{
+    width: 3em;
+    height: 3em;
+}
+.colinvoi{
+    width: 20em;   
+}
+.colinvoic{
+    width: 20em;  
+}
+.elmi{
+    display:none;
+} */
