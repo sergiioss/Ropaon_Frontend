@@ -1,16 +1,32 @@
 import React, { useState, useEffect } from "react"
 import "./Invoice.css"
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col, Card, Form, Button } from "react-bootstrap"
 import axios from "axios"
 import { useDispatch, useSelector } from "react-redux"
 import { selectPurchase } from "../Purchase/purchaseSlice"
 import Table from "react-bootstrap/Table"
+import { useNavigate } from "react-router-dom"
+import img1 from "../../assets/logoPago.png"
 
 const Invoice = (props) => {
     const dispatch = useDispatch();
     const createInvoice = useSelector(selectPurchase);
     let array1 = []
     let sumWithInitial;
+    let navigate = useNavigate();
+
+    const [invoice, setInvoice] = useState({
+        mpayment:""
+    })
+
+    const handleInput = (event) => (dispatch) => {
+        
+        setInvoice({
+            ...invoice,
+            [event.target.name]: event.target.value
+        })
+        console.log([event.target.name])
+    }
 
     const totalPrice = () => (dispatch) => {
         sumWithInitial = array1.reduce(function (
@@ -53,6 +69,13 @@ const Invoice = (props) => {
                 {dispatch(totalPrice())}
                 <div className="res">
                     <h3>TU COMPRA ASCIENDE A: {sumWithInitial},00 €</h3>
+                </div>
+                <div className="containermpay">
+                    <Form.Select className="option" aria-label="Default select example" onChange={handleInput()}>
+                        <option>Selecciona el método de pago</option>
+                        <option name="visa" value="Visa">Visa</option>
+                        <option name="paypal" value="Paypal">Paypal</option>
+                    </Form.Select>    
                 </div>
             </Col>
         </Container>

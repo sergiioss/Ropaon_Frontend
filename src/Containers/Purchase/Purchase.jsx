@@ -15,12 +15,12 @@ const Purchase = (props) => {
         navigate("/invoice");
     }
 
-    const cancelPurchase = (event) => (dispatch) =>{
+    const cancelPurchase = (event) => (dispatch) => {
         dispatch(deletePurchase());
     }
 
     return (
-        <Container className="home">
+        <Container className="purchase">
             <Row>
                 {
                     purch.Purchase.map((purchase, i) => (
@@ -30,12 +30,14 @@ const Purchase = (props) => {
                     ))
                 }
             </Row>
-            <Button className="bton" onClick={() => { dispatch(purchase()) }}>
-                Comprar
-            </Button>
-            <Button className="bton" onClick={() => { dispatch(cancelPurchase()) }}>
-                Cancelar Compra
-            </Button>
+            <div className="mainbton">
+                <Button className="bton" onClick={() => { dispatch(purchase()) }}>
+                    Comprar
+                </Button>
+                <Button className="bton" onClick={() => { dispatch(cancelPurchase()) }}>
+                    Cancelar Compra
+                </Button>
+            </div>
         </Container>
     )
 }
