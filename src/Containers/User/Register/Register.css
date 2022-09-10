@@ -2,21 +2,25 @@
     display: flex;
     justify-content:center;
     align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: rgb(104, 73, 230);
     color: black;
-    height: auto;   
+    height: 100vh;   
     width: 100vw;
-}    
+} 
+.Register{
+    max-width: 25em;
+    min-width: 25em;
+}   
 .buttonr{
     margin-bottom: 1em;
     width: 7em;
     height: 2.5em;
 }
+.input-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+}
 .msgIsError{
     color: red;
-}
-.mb-3{
-    width: 17em;
 }
