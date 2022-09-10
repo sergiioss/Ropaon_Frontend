@@ -1,0 +1,39 @@
+.login{
+    background-color: aquamarine;
+    height: auto;
+    width: 100vw;   
+}
+.loginDesign {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.sendButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    width: 5em;
+    background-color: purple;
+    color: white;
+    margin-top: 1em;
+    border-radius: 1em;
+    cursor:pointer;
+}
+.botonregister{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.msgError{
+    color: red;
+}  
+.iregister{
+    height: 3em;
+    width: 3em;
+    cursor: pointer;
+    margin-top: 1em;
+}

@@ -1,0 +1,26 @@
+.register{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    color: black;
+    height: 80vh;   
+    width: 100vw;
+} 
+.Register{
+    max-width: 25em;
+    min-width: 25em;
+}   
+.buttonr{
+    margin-bottom: 1em;
+    width: 7em;
+    height: 2.5em;
+}
+.input-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+}
+.msgIsError{
+    color: red;
+}

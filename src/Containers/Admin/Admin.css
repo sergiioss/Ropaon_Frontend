@@ -1,0 +1,21 @@
+.containeradmin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.msgIsError{
+    color: red;
+}
+.mb-3{
+    width: 15em;
+    margin-right: 10em;
+}
+
+.cbutton{
+    width: 12em;
+    margin-bottom: 4em;
+}
+.letters{
+    font-size:1.3em;
+    width: 14em;
+}

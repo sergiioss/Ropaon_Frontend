@@ -1,10 +1,10 @@
-.App {
+.profile{
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: center;
-    text-align: center;
     flex-direction: column;
-    height: auto;
-    width: 100vw;
     background-color: rgb(169, 185, 244);
-  }
+    color: black;
+    height: 80vh;
+    width: 100vw;
+}
