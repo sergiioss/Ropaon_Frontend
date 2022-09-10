@@ -4,6 +4,9 @@
 
 .card-global{
     margin-bottom: 1em;
+    min-width: 15em;
+    max-width: 15em;
+    min-height: 26em;
 }
 .purchase{
     color:red;
@@ -14,4 +17,15 @@
 .card-cont{
     min-width: 15em;
     max-width: 15em;
+}
+.fotocompra{
+    width: 2em;
+    height: 4em;
+}
+.cardcompra{
+    all:unset;
+    width: 10em;
+}
+.card-globalc{
+    all:unset;
 }

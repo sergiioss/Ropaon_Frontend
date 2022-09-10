@@ -1,14 +1,25 @@
 .purchase{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr,1fr,1fr,1fr;
     justify-content:center;
     align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: white;
+    margin-top:1em;
+    background-color: rgb(169, 185, 244);
     color: black;
-    height: 75vh;   
+    height: auto;   
     width: 100vw;
 } 
 .minw{
     min-width: 15em;
-}   
+}  
+.mainbton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+.bton{
+    margin-right: 3em;
+    margin-bottom: 3em;
+    margin-top: 3em;
+    width: 15em;
+}

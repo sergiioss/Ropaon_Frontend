@@ -8,10 +8,10 @@ import Header from "./Components/Header/Header"
 import Footer from "./Components/Footer/Footer"
 import Female from "./Containers/Female/Female"
 import Male from "./Containers/Male/Male"
-import Boy from "./Containers/Boy/Boy"
 import Ftitulo from "./Containers/Ftitulo/Ftitulo"
 import Profile from "./Containers/Profile/Profile"
 import Purchase from "./Containers/Purchase/Purchase"
+import Invoice from "./Containers/Invoice/Invoice"
 
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
           <Route path="/register" element={<Register/>}/>
           <Route path="/female" element={<Female/>}/>
           <Route path="/male" element={<Male/>}/>
-          <Route path="/boy" element={<Boy/>}/>
+          <Route path="/invoice" element={<Invoice/>}/>
           <Route path="/ftitulo" element={<Ftitulo/>}/>
           <Route path="/profile" element={<Profile/>}/>
           <Route path="/purchase" element={<Purchase/>}/>

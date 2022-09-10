@@ -73,7 +73,7 @@ const Admin = (props) => {
             const product = await axios.post('https://ropaon.herokuapp.com/api/create', body, config)
 
             let response = product
-            console.log(response);
+
             if (response.status === 200) {
                 dispatch(registerProduct(response.data))
             }
@@ -185,7 +185,6 @@ const Admin = (props) => {
                     <Form className="admin" onSubmit={uProducts}>
                         <Form.Group className="mb-3" controlId="formBasicName">
                             <h1 className="titulo">Actualizar.P</h1>
-                            <div><NavLink className="navlink" to="/">Pincha aqui y selecciona el producto que quieres cambiar</NavLink></div>
                             <Form.Label>Nombre</Form.Label>
                             <Form.Control className="input-form" type="text" name="name" onChange={handleInput} />
                         </Form.Group>
@@ -228,6 +227,7 @@ const Admin = (props) => {
                             Borrar producto
                         </Button>
                     </Form>
+                    <div className="letters"><NavLink className="letters"to="/">Para actualizar o borrar un producto pincha aqui y selecciona el producto</NavLink></div>
                     {/* <Form.Label className="msgIsError">{msgError}</Form.Label> */}
                 </Col>
             </Row>

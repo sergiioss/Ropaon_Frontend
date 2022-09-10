@@ -1,8 +1,8 @@
 import React from "react"
 import { useState } from "react"
-import { Form, Button, Row, Col } from 'react-bootstrap'
-import { useDispatch} from 'react-redux'
-import { registerUser} from '../userSlice'
+import { Form, Button, Row, Col, Container } from 'react-bootstrap'
+import { useDispatch } from 'react-redux'
+import { registerUser } from '../userSlice'
 import { useNavigate } from 'react-router-dom'
 import "./Register.css"
 
@@ -80,26 +80,26 @@ const Register = props => {
             isError: false,
             msgIsError: ''
         });
-        
-        if(register.name == ""){
+
+        if (register.name == "") {
             setMsgError('¡¡Te falta por rellenar el nombre!!');
             setTimeout(() => {
                 setMsgError('');
             }, 1200)
             return;
-        }else if(register.addres == ""){
+        } else if (register.addres == "") {
             setMsgError('¡¡Te falta por rellenar el addres!!');
             setTimeout(() => {
                 setMsgError('');
             }, 1200)
             return;
-        }else if(register.email == ""){
+        } else if (register.email == "") {
             setMsgError('¡¡Te falta por rellenar el email!!');
             setTimeout(() => {
                 setMsgError('');
             }, 1200)
             return;
-        }else if(register.password == ""){
+        } else if (register.password == "") {
             setMsgError('¡¡Te falta por rellenar el password!!');
             setTimeout(() => {
                 setMsgError('');
@@ -117,37 +117,39 @@ const Register = props => {
 
     }
 
-    return(
-        <Row className="Register justify-content-md-center">
-            <Col md={12}>
+    return (
+        <Container className="register">
+            <Row className="Register justify-content-center">
                 <h1>Registro</h1>
                 <br></br>
-                 {/* <pre>{JSON.stringify(register, null,5)}</pre> */} 
-                <Form onSubmit={userRegister}>
-                    <Form.Group className="mb-3" controlId="formBasicName">
+                {/* <pre>{JSON.stringify(register, null,5)}</pre> */}
+                <Form className="form" onSubmit={userRegister}>
+                    <Form.Group controlId="formBasicName">
                         <Form.Label>Nombre</Form.Label>
                         <Form.Control className="input-form" type="text" name="name" onChange={handleInput} />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicAddres">
+                    <Form.Group controlId="formBasicAddres">
                         <Form.Label>Direccion</Form.Label>
-                        <Form.Control type="text" name="addres" onChange={handleInput} />
+                        <Form.Control className="input-form" type="text" name="addres" onChange={handleInput} />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" name="email" onChange={handleInput} />
+                        <Form.Control className="input-form" type="email" name="email" onChange={handleInput} />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Group controlId="formBasicPassword">
                         <Form.Label>Contraseña</Form.Label>
-                        <Form.Control type="password" name="password" onChange={handleInput} />
+                        <Form.Control className="input-form" type="password" name="password" onChange={handleInput} />
                     </Form.Group>
                     <Button className="buttonr" variant="primary" type="submit">
                         Registrarse
                     </Button>
                 </Form>
-                <Form.Label className="msgIsError">{msgError}</Form.Label> 
-                <Form.Label className="msgIsError">{register.msgIsError}</Form.Label> 
-            </Col>
-        </Row>
+                <Form.Group className="errors">
+                    <Form.Label className="msgIsError">{msgError}</Form.Label>
+                    <Form.Label className="msgIsError">{register.msgIsError}</Form.Label>
+                </Form.Group>
+            </Row>
+        </Container>
     )
 }
 export default Register

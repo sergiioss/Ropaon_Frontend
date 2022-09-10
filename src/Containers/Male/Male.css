@@ -4,9 +4,9 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: white;
+    background-color: rgb(169, 185, 244);
     color: black;
-    height: 75vh;   
+    height: auto;   
     width: 100vw;
 }   
 .minw{

@@ -16,14 +16,11 @@ const ProductCard = props => {
     const navigate = useNavigate();
     const credenciales = useSelector(selectDatosUsuario);
 
-    let [evento, setEvento] = useState([])
-
-    const deleteItem = (event) => (dispatch) => {
-        setEvento(event)
+    const alertClick = (event) => (dispatch) => {
+        dispatch(arrayPurchase(event))
+        alert('Se ha añadido al carrito tu producto');
     }
     const updateProduct = (event) => (dispatch) => {
-        console.log(event.name);
-        console.log(event.id);
         dispatch(idProduct(event));
         navigate("/admin");
     }
@@ -44,7 +41,7 @@ const ProductCard = props => {
                                     Color: {props.data.color}
                                 </Card.Text>
                                 <Card.Text>
-                                    Precio: {props.data.product_price},99 €
+                                    Precio: {props.data.product_price},00 €
                                 </Card.Text>
                             </Card.Body>
                         </Card>
@@ -69,7 +66,7 @@ const ProductCard = props => {
                                     Color: {props.data.color}
                                 </Card.Text>
                                 <Card.Text>
-                                    Precio: {props.data.product_price},99 €
+                                    Precio: {props.data.product_price},00 €
                                 </Card.Text>
                                 {props.buy != 1 && <Button onClick={() => { dispatch(updateProduct(props.data)) }}>
                                     Seleccionar
@@ -80,7 +77,7 @@ const ProductCard = props => {
                 ))}
             </Row>
         )
-    } else if (props.data.id !== evento) {
+    } else {
         return (
             <Row xs={1} md={3} className="g-4 img-fluid">
                 {Array.from({ length: 1 }).map((_, idx) => (
@@ -96,13 +93,10 @@ const ProductCard = props => {
                                     Color: {props.data.color}
                                 </Card.Text>
                                 <Card.Text>
-                                    Precio: {props.data.product_price},99 €
+                                    Precio: {props.data.product_price},00 €
                                 </Card.Text>
-                                {props.buy != 1 && <Button onClick={() => { dispatch(arrayPurchase(props.data)) }}>
+                                {props.buy != 1 && <Button onClick={() => { dispatch(alertClick(props.data)) }}>
                                     Comprar
-                                </Button>}
-                                {props.buy == 1 && <Button onClick={() => { dispatch(deleteItem(props.data.id)) }}>
-                                    Eliminar
                                 </Button>}
                             </Card.Body>
                         </Card>
