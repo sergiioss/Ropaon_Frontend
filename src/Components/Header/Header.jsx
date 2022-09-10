@@ -54,8 +54,8 @@ const Header = props => {
                 <div className="header">
                     <img className="logo" src={img} />
                     <input className="listInput" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
-                    <NavLink className="navlinkp" to="/admin">Admin</NavLink>
                     <NavLink to="/Purchase"><img className="carrito" src={img2}></img></NavLink>
+                    <NavLink className="navlinkp" to="/admin">Admin</NavLink>
                     <span>Bienvenido, {credenciales.user.name}<br></br>
                     <NavLink className="navlinkp" to="/Profile">Mi perfil</NavLink></span>
                 </div>
