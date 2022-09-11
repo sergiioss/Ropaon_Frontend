@@ -14,7 +14,7 @@ const Profile = props => {
 
     return (
         <div className="profile">
-            <p>Hola perfil</p>
+            <p>BIENVENIDO! </p>
             <p>Nombre:{credenciales.user.name}</p><br></br>
             <p>E-mail:{credenciales.user.email}</p><br></br>
             <p>Telefono:{credenciales.user.addres}</p>
