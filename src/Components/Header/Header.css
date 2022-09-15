@@ -7,14 +7,14 @@
     height: 8em;
     width: 100vw;
 }
-.menu{
+.navMenu{
     display: flex;
     justify-content: left;
     align-items: center;
     background-color: black;
     color: white;
-    height: 5em;
-    width: 100vw;
+    height: 6em;
+    width: auto;
 }
 .submenu{
     color: white;
@@ -23,7 +23,7 @@
     justify-content: space-between;
     align-items: center;
     height: 3em;
-    width: auto;
+    width: auto;    
 }
 .navlink{
     all: unset;
@@ -37,23 +37,17 @@
 .logo{
     width: 10em;
     height: 10em;
-    margin-left:2em;
 }
 .listInput{
-    width: 20em;
     height: 2em;
-    margin-left: 10em;
 }
 .carrito{
     height: 3em;
     width: 3em;
-    margin-left: 35em;
-    margin-right: 2em;
 }
 .login{
     height: 3em;
     width: 3em;
-    margin-left:7em;
     background-color: blue;
 }
 .login:hover{
@@ -69,7 +63,6 @@
 }
 .navlinkp:hover{
     color:red;
-    
 }
 .carrito:hover{
     height: 3.5em;
