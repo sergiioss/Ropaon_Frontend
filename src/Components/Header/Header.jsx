@@ -7,10 +7,7 @@ import img3 from "../../assets/logologin.png"
 import { useSelector, useDispatch } from "react-redux"
 import { selectDatosUsuario } from "../../Containers/User/userSlice"
 import { productos } from "../../Containers/Ftitulo/ftituloSlice"
-import Nav from 'react-bootstrap/Nav'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
-
+import { Nav, Col, Row, Container } from 'react-bootstrap'
 
 const Header = props => {
 
@@ -28,98 +25,119 @@ const Header = props => {
     if (!credenciales?.token) {
 
         return (
-            <div>
-                <Col className="header">
-                    <Col xs={4} sm={4} md={3} lg={2}>
-                        <img className="logo" src={img} />
+            <Container fluid className="header">
+                <Row className="nav">
+                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                        <img className="components maura" src={img} />
                     </Col>
-                    <Col xs={3} sm={4} md={3} lg={4}>
-                        <input className="listInput" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
+                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                        <input className="components input" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
                     </Col>
-                    <Col xs={4} sm={1} md={3} lg={5}>
-                        <img className="carrito" src={img2}></img>
+                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                        <img className="components car" src={img2}></img>
                     </Col>
-                    <Col xs={1} sm={4} md={3} lg={1}>
-                        <NavLink className="ilogin" to="/login"><img className="login" src={img3} /></NavLink>
+                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                        <NavLink to="/login"><img className="components login" src={img3} /></NavLink>
                     </Col>
-                </Col>
-                <Nav variant="pills" className="navMenu">
-                    <Nav.Item className="submenu">
-                        <NavLink className="navlink" to="/">Home</NavLink>
-                    </Nav.Item>
-                    <Nav.Item className="submenu">
-                        <NavLink className="navlink" to="/female">Mujer</NavLink>
-                    </Nav.Item>
-                    <Nav.Item className="submenu">
-                        <NavLink className="navlink" to="/male">Hombre</NavLink>
-                    </Nav.Item>
-                </Nav>
-            </div>
+                </Row>
+                <Row className="nav2">
+                    <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
+                        <NavLink className="lin" to="/">
+                            <div >Home</div>
+                        </NavLink>
+                    </Col>
+                    <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
+                        <NavLink className="lin" to="/female">
+                            <div >Mujer</div>
+                        </NavLink>
+                    </Col>
+                    <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
+                        <NavLink className="lin" to="/male">
+                            <div >Hombre</div>
+                        </NavLink>
+                    </Col>
+                </Row>
+            </Container>
         )
     } else if (credenciales.user.id === 7) {
         return (
-            <div>
-                <Col className="header">
-                    <Col xs={4} sm={4} md={3} lg={2}>
-                        <img className="logo" src={img} />
+            <Container fluid className="header">
+                <Row className="nav">
+                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                        <img className="components maura" src={img} />
                     </Col>
-                    <Col xs={3} sm={4} md={2} lg={3}>
-                        <input className="listInput" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
+                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                        <input className="components input" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
                     </Col>
-                    <Col xs={4} sm={1} md={3} lg={2}>
-                        <NavLink to="/Purchase"><img className="carrito" src={img2}></img></NavLink>
+                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                        <img className="components car" src={img2}></img>
                     </Col>
-                    <Col xs={4} sm={1} md={1} lg={2}>
-                        <NavLink className="navlinkp" to="/admin">Admin</NavLink>
+                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                        <NavLink className="components ad" to="/admin">Admin</NavLink>
                     </Col>
-                    <Col xs={4} sm={1} md={3} lg={3}>
+                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
                         <span>Bienvenido, {credenciales.user.name}<br></br>
-                            <NavLink className="navlinkp" to="/Profile">Mi perfil</NavLink></span>
+                            <NavLink className="components pro" to="/Profile">Mi perfil</NavLink></span>
                     </Col>
-                </Col>
-                <Nav variant="pills" className="navMenu">
-                    <Nav.Item className="submenu">
-                        <NavLink className="navlink" to="/">Home</NavLink>
-                    </Nav.Item>
-                    <Nav.Item className="submenu">
-                        <NavLink className="navlink" to="/female">Mujer</NavLink>
-                    </Nav.Item>
-                    <Nav.Item className="submenu">
-                        <NavLink className="navlink" to="/male">Hombre</NavLink>
-                    </Nav.Item>
-                </Nav>
-            </div>
+                </Row>
+                <Row className="nav2">
+                    <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
+                        <NavLink className="lin" to="/">
+                            <div >Home</div>
+                        </NavLink>
+                    </Col>
+                    <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
+                        <NavLink className="lin" to="/female">
+                            <div >Mujer</div>
+                        </NavLink>
+                    </Col>
+                    <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
+                        <NavLink className="lin" to="/male">
+                            <div >Hombre</div>
+                        </NavLink>
+                    </Col>
+                </Row>
+            </Container>
         )
     } else {
         return (
-            <div>
-                <Col className="header">
-                    <Col xs={4} sm={4} md={3} lg={2}>
-                        <img className="logo" src={img} />
+            <Container fluid className="header">
+                <Row className="nav">
+                    <Col xs={6} sm={6} md={6} lg={2} xl={2} xxl={2}>
+                        <img className="components maura" src={img} />
                     </Col>
-                    <Col xs={5} sm={4} md={2} lg={4}>
-                        <input className="listInput" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
+                    <Col xs={6} sm={6} md={6} lg={3} xl={3} xxl={3}>
+                        <input className="components input" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
                     </Col>
-                    <Col xs={1} sm={2} md={4} lg={4}>
-                        <NavLink to="/Purchase"><img className="carrito" src={img2}></img></NavLink>
+                    <Col xs={4} sm={4} md={4} lg={2} xl={2} xxl={2}>
+                        <img className="components car" src={img2}></img>
                     </Col>
-                    <Col xs={3} sm={2} md={3} lg={2}>
+                    <Col xs={4} sm={4} md={4} lg={2} xl={2} xxl={2}>
+                        <NavLink to="/login"><img className="components login" src={img3} /></NavLink>
+                    </Col>
+                    <Col xs={4} sm={4} md={4} lg={3} xl={3} xxl={3}>
                         <span>Bienvenido, {credenciales.user.name}<br></br>
-                            <NavLink className="navlinkp" to="/Profile">Mi perfil</NavLink></span>
+                            <NavLink className="components mypro" to="/Profile">Mi perfil</NavLink></span>
                     </Col>
-                </Col>
-                <Nav variant="pills" className="navMenu">
-                    <Nav.Item className="submenu">
-                        <NavLink className="navlink" to="/">Home</NavLink>
-                    </Nav.Item>
-                    <Nav.Item className="submenu">
-                        <NavLink className="navlink" to="/female">Mujer</NavLink>
-                    </Nav.Item>
-                    <Nav.Item className="submenu">
-                        <NavLink className="navlink" to="/male">Hombre</NavLink>
-                    </Nav.Item>
-                </Nav>
-            </div>
+                </Row>
+                <Row className="nav2">
+                    <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
+                        <NavLink className="lin" to="/">
+                            <div >Home</div>
+                        </NavLink>
+                    </Col>
+                    <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
+                        <NavLink className="lin" to="/female">
+                            <div >Mujer</div>
+                        </NavLink>
+                    </Col>
+                    <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
+                        <NavLink className="lin" to="/male">
+                            <div >Hombre</div>
+                        </NavLink>
+                    </Col>
+                </Row>
+            </Container>
         )
     }
 }
