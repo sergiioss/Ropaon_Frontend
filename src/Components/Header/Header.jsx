@@ -20,6 +20,9 @@ const Header = props => {
         if (event.key === "Enter") {
             dispatch(productos(event.target.value))
             navegador("/ftitulo");
+            setTimeout(() => {
+                event.target.value = "";
+            }, 500)
         }
     }
 
@@ -48,12 +51,12 @@ const Header = props => {
                         </NavLink>
                     </Col>
                     <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
-                        <NavLink className="lin" to="/male" onClick={()=> dispatch(female())}>
+                        <NavLink className="lin" to="/male" onClick={() => dispatch(female())}>
                             <div >Mujer</div>
                         </NavLink>
                     </Col>
                     <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
-                        <NavLink className="lin" to="/male" onClick={()=> dispatch(male())}>
+                        <NavLink className="lin" to="/male" onClick={() => dispatch(male())}>
                             <div >Hombre</div>
                         </NavLink>
                     </Col>
@@ -88,12 +91,12 @@ const Header = props => {
                         </NavLink>
                     </Col>
                     <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
-                        <NavLink className="lin" to="/male" onClick={()=> dispatch(female())}>
+                        <NavLink className="lin" to="/male" onClick={() => dispatch(female())}>
                             <div >Mujer</div>
                         </NavLink>
                     </Col>
                     <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
-                        <NavLink className="lin" to="/male" onClick={()=> dispatch(male())}>
+                        <NavLink className="lin" to="/male" onClick={() => dispatch(male())}>
                             <div >Hombre</div>
                         </NavLink>
                     </Col>
@@ -128,12 +131,12 @@ const Header = props => {
                         </NavLink>
                     </Col>
                     <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
-                        <NavLink className="lin" to="/male" onClick={()=> dispatch(female())}>
+                        <NavLink className="lin" to="/male" onClick={() => dispatch(female())}>
                             <div >Mujer</div>
                         </NavLink>
                     </Col>
                     <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
-                        <NavLink className="lin" to="/male" onClick={()=> dispatch(male())}>
+                        <NavLink className="lin" to="/male" onClick={() => dispatch(male())}>
                             <div >Hombre</div>
                         </NavLink>
                     </Col>
