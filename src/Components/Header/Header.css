@@ -45,5 +45,14 @@
     all:unset;
     cursor:pointer;
 }
+.pro{
+    all:unset;
+    cursor:pointer;
+}
+.ad{
+    all:unset;
+    cursor:pointer;
+    font-size: 1.6em;
+}
 
 

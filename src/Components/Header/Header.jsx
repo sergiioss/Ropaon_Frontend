@@ -63,19 +63,19 @@ const Header = props => {
         return (
             <Container fluid className="header">
                 <Row className="nav">
-                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                    <Col xs={12} sm={12} md={2} lg={3} xl={2} xxl={2}>
                         <img className="components maura" src={img} />
                     </Col>
-                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                    <Col xs={12} sm={12} md={4} lg={3} xl={2} xxl={2}>
                         <input className="components input" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
                     </Col>
-                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
-                        <img className="components car" src={img2}></img>
+                    <Col xs={12} sm={12} md={2} lg={2} xl={2} xxl={2}>
+                        <NavLink to="/purchase"><img className="components car" src={img2} /></NavLink>
                     </Col>
-                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                    <Col xs={12} sm={12} md={2} lg={2} xl={3} xxl={3}>
                         <NavLink className="components ad" to="/admin">Admin</NavLink>
                     </Col>
-                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                    <Col xs={12} sm={12} md={2} lg={2} xl={3} xxl={3}>
                         <span>Bienvenido, {credenciales.user.name}<br></br>
                             <NavLink className="components pro" to="/Profile">Mi perfil</NavLink></span>
                     </Col>
@@ -110,7 +110,7 @@ const Header = props => {
                         <input className="components input" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
                     </Col>
                     <Col xs={4} sm={4} md={4} lg={2} xl={2} xxl={2}>
-                        <img className="components car" src={img2}></img>
+                        <NavLink to="/purchase"><img className="components car" src={img2} /></NavLink>
                     </Col>
                     <Col xs={4} sm={4} md={4} lg={2} xl={2} xxl={2}>
                         <NavLink to="/login"><img className="components login" src={img3} /></NavLink>
