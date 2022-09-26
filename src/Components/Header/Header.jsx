@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { selectDatosUsuario } from "../../Containers/User/userSlice"
 import { productos } from "../../Containers/Ftitulo/ftituloSlice"
 import { Nav, Col, Row, Container } from 'react-bootstrap'
+import { female, male } from "../../Containers/Male/maleSlice"
 
 const Header = props => {
 
@@ -47,12 +48,12 @@ const Header = props => {
                         </NavLink>
                     </Col>
                     <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
-                        <NavLink className="lin" to="/female">
+                        <NavLink className="lin" to="/male" onClick={()=> dispatch(female())}>
                             <div >Mujer</div>
                         </NavLink>
                     </Col>
                     <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
-                        <NavLink className="lin" to="/male">
+                        <NavLink className="lin" to="/male" onClick={()=> dispatch(male())}>
                             <div >Hombre</div>
                         </NavLink>
                     </Col>
@@ -87,12 +88,12 @@ const Header = props => {
                         </NavLink>
                     </Col>
                     <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
-                        <NavLink className="lin" to="/female">
+                        <NavLink className="lin" to="/male" onClick={()=> dispatch(female())}>
                             <div >Mujer</div>
                         </NavLink>
                     </Col>
                     <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
-                        <NavLink className="lin" to="/male">
+                        <NavLink className="lin" to="/male" onClick={()=> dispatch(male())}>
                             <div >Hombre</div>
                         </NavLink>
                     </Col>
@@ -127,12 +128,12 @@ const Header = props => {
                         </NavLink>
                     </Col>
                     <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
-                        <NavLink className="lin" to="/female">
+                        <NavLink className="lin" to="/male" onClick={()=> dispatch(female())}>
                             <div >Mujer</div>
                         </NavLink>
                     </Col>
                     <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
-                        <NavLink className="lin" to="/male">
+                        <NavLink className="lin" to="/male" onClick={()=> dispatch(male())}>
                             <div >Hombre</div>
                         </NavLink>
                     </Col>
