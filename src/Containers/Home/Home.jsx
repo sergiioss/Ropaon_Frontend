@@ -12,7 +12,7 @@ const Home = (props) => {
     })
 
     useEffect(() => {
-        axios.get('https://ropaon.herokuapp.com/api/productall')
+        axios.get('https://ropaon-production.up.railway.app/api/productall')
             .then(resp => {
                 setProducts({
                     prod: resp.data.data
