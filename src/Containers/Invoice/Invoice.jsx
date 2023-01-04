@@ -71,7 +71,7 @@ const Invoice = (props) => {
                 user_id: user_id,
                 payment: payment
             }
-            const purchase = await axios.post('https://ropaon.herokuapp.com/api/create/purchase',body, config)
+            const purchase = await axios.post('https://ropaon-production.up.railway.app/api/purchase',body, config)
     
             let response = purchase;
             console.log(response)

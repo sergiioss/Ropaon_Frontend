@@ -70,7 +70,7 @@ const Admin = (props) => {
                 color: color,
                 gender: gender
             }
-            const product = await axios.post('https://ropaon.herokuapp.com/api/create', body, config)
+            const product = await axios.post('https://ropaon-production.up.railway.app/api/create', body, config)
 
             let response = product
 
@@ -103,7 +103,7 @@ const Admin = (props) => {
                 color: color,
                 gender: gender
             }
-            const product = await axios.put(`https://ropaon.herokuapp.com/api/updatedproduct/${newId}`, body, config);
+            const product = await axios.put(`https://ropaon-production.up.railway.app/api/updatedproduct/${newId}`, body, config);
             
             let response = product
             console.log(response);
@@ -128,7 +128,7 @@ const Admin = (props) => {
                     "Authorization": `Bearer ${token.token}`
                 }
             }
-            const product = await axios.delete(`https://ropaon.herokuapp.com/api/deleteproduct/${newId}`, config);
+            const product = await axios.delete(`https://ropaon-production.up.railway.app/api/deleteproduct/${newId}`, config);
             
             let response = product
             if (response.status === 200) {

@@ -36,7 +36,7 @@ export const userSlice = createSlice({
 
 export const loginUsuario = (body) => async (dispatch) => {
     try{
-        const user = await axios.post('https://ropaon.herokuapp.com/api/login',body);
+        const user = await axios.post('https://ropaon-production.up.railway.app/api/login',body);
         let decodificarToken = jwt(user.data.token);
         if(user.status === 200){
             dispatch(login({
@@ -57,7 +57,7 @@ export const logOut = () => (dispatch) => {
 
 export const registerUser = (name, addres, email, password) => async (dispatch) => {
     try {
-        const user = await axios.post('https://ropaon.herokuapp.com/api/register',
+        const user = await axios.post('https://ropaon-production.up.railway.app/api/register',
         {
             name: name,
             addres: addres,
