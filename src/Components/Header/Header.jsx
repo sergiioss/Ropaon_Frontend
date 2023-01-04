@@ -63,7 +63,7 @@ const Header = props => {
                 </Row>
             </Container>
         )
-    } else if (credenciales.user.id === 7) {
+    } else if (credenciales.user.id === 1) {
         return (
             <Container fluid className="header">
                 <Row className="nav">
