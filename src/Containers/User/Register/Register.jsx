@@ -9,13 +9,14 @@ import "./Register.css"
 const Register = props => {
     const dispatch = useDispatch()
     let navigate = useNavigate()
-    const [msgError, setMsgError] = useState("");
+    const [msgOk, setMsgOk] = useState("");
 
     const [register, setRegister] = useState({
         name: '',
         addres: '',
         email: '',
         password: '',
+        isError: 'false',
         msgIsError: '',
     })
 
@@ -29,7 +30,8 @@ const Register = props => {
     const userRegister = (event) => {
         event.preventDefault()
 
-        if (! /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(register.email)) {
+        if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(register.email)) {
+            
             setRegister({
                 ...register,
                 isError: true,
@@ -38,6 +40,7 @@ const Register = props => {
             setTimeout(() => {
                 setRegister({
                     ...register,
+                    isError: false,
                     msgIsError: ""
                 });
             }, 1200)
@@ -45,7 +48,7 @@ const Register = props => {
         }
 
         if (register.password.length > 5) {
-            if (! /[\d()+-]/g.test(register.password)) {
+            if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){6,15}$/.test(register.password)) {
                 setRegister({
                     ...register,
                     isError: true,
@@ -54,6 +57,7 @@ const Register = props => {
                 setTimeout(() => {
                     setRegister({
                         ...register,
+                        isError:false,
                         msgIsError: ""
                     });
                 }, 1200)
@@ -69,6 +73,7 @@ const Register = props => {
             setTimeout(() => {
                 setRegister({
                     ...register,
+                    isError:false,
                     msgIsError: ""
                 });
             }, 1200)
@@ -82,32 +87,64 @@ const Register = props => {
         });
 
         if (register.name == "") {
-            setMsgError('¡¡Te falta por rellenar el nombre!!');
+            setRegister({
+                ...register,
+                isError:true,
+                msgIsError: "¡¡Te falta por rellenar el nombre!!"
+            });
             setTimeout(() => {
-                setMsgError('');
+                setRegister({
+                    ...register,
+                    isError:false,
+                    msgIsError: ""
+                });
             }, 1200)
             return;
         } else if (register.addres == "") {
-            setMsgError('¡¡Te falta por rellenar el addres!!');
+            setRegister({
+                ...register,
+                isError:true,
+                msgIsError: "¡¡Te falta por rellenar la dirección!!"
+            });
             setTimeout(() => {
-                setMsgError('');
+                setRegister({
+                    ...register,
+                    isError:false,
+                    msgIsError: ""
+                });
             }, 1200)
             return;
         } else if (register.email == "") {
-            setMsgError('¡¡Te falta por rellenar el email!!');
+            setRegister({
+                ...register,
+                isError:true,
+                msgIsError: "¡¡Te falta por rellenar el e-mail!!"
+            });
             setTimeout(() => {
-                setMsgError('');
+                setRegister({
+                    ...register,
+                    isError:false,
+                    msgIsError: ""
+                });
             }, 1200)
             return;
         } else if (register.password == "") {
-            setMsgError('¡¡Te falta por rellenar el password!!');
+            setRegister({
+                ...register,
+                isError:true,
+                msgIsError: "¡¡Te falta por rellenar la contraseña!!"
+            });
             setTimeout(() => {
-                setMsgError('');
+                setRegister({
+                    ...register,
+                    isError:false,
+                    msgIsError: ""
+                });
             }, 1200)
             return;
         };
 
-        setMsgError('Te has registrado correctamente');
+        setMsgOk('Te has registrado correctamente');
 
         dispatch(registerUser(register.name, register.addres, register.email, register.password))
 
@@ -134,7 +171,7 @@ const Register = props => {
                     </Form.Group>
                     <Form.Group controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
-                        <Form.Control className="input-form" type="email" name="email" onChange={handleInput} />
+                        <Form.Control className="input-form" type="text" name="email" onChange={handleInput} />
                     </Form.Group>
                     <Form.Group controlId="formBasicPassword">
                         <Form.Label>Contraseña</Form.Label>
@@ -145,7 +182,7 @@ const Register = props => {
                     </Button>
                 </Form>
                 <Form.Group className="errors">
-                    <Form.Label className="msgIsError">{msgError}</Form.Label>
+                    <Form.Label className="msgIsOk">{msgOk}</Form.Label>
                     <Form.Label className="msgIsError">{register.msgIsError}</Form.Label>
                 </Form.Group>
             </Row>

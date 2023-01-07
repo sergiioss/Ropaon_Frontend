@@ -23,4 +23,9 @@
 }
 .msgIsError{
     color: red;
+    font-size:20px;
+}
+.msgIsOk{
+    color:green;
+    font-size:20px;
 }
