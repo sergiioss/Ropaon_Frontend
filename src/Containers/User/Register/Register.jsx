@@ -31,7 +31,7 @@ const Register = props => {
         event.preventDefault()
 
         if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(register.email)) {
-            
+
             setRegister({
                 ...register,
                 isError: true,
@@ -48,6 +48,14 @@ const Register = props => {
         }
 
         if (register.password.length > 5) {
+            /* Minimo 6 caracteres
+            Al menos una letra mayúscula
+            Maximo 15
+            Al menos un dígito
+            Al menos una letra minucula
+            Al menos 1 caracter especial 
+            No espacios en blanco
+            */
             if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){6,15}$/.test(register.password)) {
                 setRegister({
                     ...register,
@@ -57,7 +65,7 @@ const Register = props => {
                 setTimeout(() => {
                     setRegister({
                         ...register,
-                        isError:false,
+                        isError: false,
                         msgIsError: ""
                     });
                 }, 1200)
@@ -73,7 +81,7 @@ const Register = props => {
             setTimeout(() => {
                 setRegister({
                     ...register,
-                    isError:false,
+                    isError: false,
                     msgIsError: ""
                 });
             }, 1200)
@@ -89,13 +97,13 @@ const Register = props => {
         if (register.name == "") {
             setRegister({
                 ...register,
-                isError:true,
+                isError: true,
                 msgIsError: "¡¡Te falta por rellenar el nombre!!"
             });
             setTimeout(() => {
                 setRegister({
                     ...register,
-                    isError:false,
+                    isError: false,
                     msgIsError: ""
                 });
             }, 1200)
@@ -103,13 +111,13 @@ const Register = props => {
         } else if (register.addres == "") {
             setRegister({
                 ...register,
-                isError:true,
+                isError: true,
                 msgIsError: "¡¡Te falta por rellenar la dirección!!"
             });
             setTimeout(() => {
                 setRegister({
                     ...register,
-                    isError:false,
+                    isError: false,
                     msgIsError: ""
                 });
             }, 1200)
@@ -117,13 +125,13 @@ const Register = props => {
         } else if (register.email == "") {
             setRegister({
                 ...register,
-                isError:true,
+                isError: true,
                 msgIsError: "¡¡Te falta por rellenar el e-mail!!"
             });
             setTimeout(() => {
                 setRegister({
                     ...register,
-                    isError:false,
+                    isError: false,
                     msgIsError: ""
                 });
             }, 1200)
@@ -131,13 +139,13 @@ const Register = props => {
         } else if (register.password == "") {
             setRegister({
                 ...register,
-                isError:true,
+                isError: true,
                 msgIsError: "¡¡Te falta por rellenar la contraseña!!"
             });
             setTimeout(() => {
                 setRegister({
                     ...register,
-                    isError:false,
+                    isError: false,
                     msgIsError: ""
                 });
             }, 1200)
