@@ -117,6 +117,7 @@ const Admin = (props) => {
     }
 
     const dProducts = (event) => {
+        console.log(event)
         event.preventDefault();
         dispatch(deleteProducts());
     }
@@ -227,7 +228,7 @@ const Admin = (props) => {
                             Borrar producto
                         </Button>
                     </Form>
-                    <div className="letters"><NavLink className="letters"to="/">Para actualizar o borrar un producto pincha aqui y selecciona el producto</NavLink></div>
+                    <div className="letters"><NavLink className="letters" to="/">Para actualizar o borrar un producto pincha aqui y selecciona el producto</NavLink></div>
                     {/* <Form.Label className="msgIsError">{msgError}</Form.Label> */}
                 </Col>
             </Row>

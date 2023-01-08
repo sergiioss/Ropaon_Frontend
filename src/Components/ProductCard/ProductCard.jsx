@@ -50,7 +50,7 @@ const ProductCard = props => {
             </Row>
 
         );
-    } else if (credenciales.user.id === 7) {
+    } else if (credenciales.user.id === 1) {
         return (
             <Row xs={1} md={3} className="g-4 img-fluid">
                 {Array.from({ length: 1 }).map((_, idx) => (
