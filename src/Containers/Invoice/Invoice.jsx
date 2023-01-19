@@ -104,20 +104,20 @@ const Invoice = (props) => {
                             <th className="col">Foto</th>
                         </tr>
                     </thead>
-                </Table>
+                    </Table>
                 {
                     createInvoice.Purchase.map((purchase, i) => (
                         <div data={purchase} key={i} buy="1" />,
                         <div>{products.push(purchase.id)}</div>,
                         <div className="elmi" key={i}>{array1.push(purchase.product_price)}</div>,
-                        <Row key={i}>
-                            <div className="colinvoi">
+                        <Row key={i} xs={12} sm={12} md={12} lg={12} xl={12} xxl={8}>
+                            <Col className="maincol" xs={4} sm={4} md={4} lg={4} xl={6} xxl={6}>
                                 <th className="colinvoi">{purchase.name}</th>
                                 <th className="colinvoic">{purchase.product_price},00 €</th>
                                 <th className="colinvoic">{purchase.size}</th>
                                 <th className="colinvoic">{purchase.color}</th>
                                 <th className="colinvoic"><img className="fotoinvoice" src={purchase.url}></img></th>
-                            </div>
+                            </Col>
                         </Row>
                     ))
                 }
