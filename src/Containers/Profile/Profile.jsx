@@ -19,28 +19,31 @@ const Profile = props => {
 
     return (
         <Container className="profile">
-            <Row>
-                    <p className="welcomeProfile">BIENVENIDO A TU PERFIL!</p>
+            <Col>
+                <Row>
+                    <Col xl={10} className="welcomeProfile">BIENVENIDO A TU PERFIL!</Col>
+                    <Col  className="logoutButton" onClick={() => {
+                        /* navegador("/") */
+                        /* localStorage.clear() */
+                        dispatch(logOut())
+                        navegador("/")
+                    }}>Logout<img className="imgLogout" src="http://cdn.onlinewebfonts.com/svg/img_119401.png"></img></Col><br></br>
+                </Row>  
                 <Col className="photo" xs={4} sm={4} md={4} xl={4}>
                     <p className="namephoto">{credenciales.user.name}</p>
                     <Card.Img src={credenciales.user.photo}></Card.Img>
-                    <Button className="buttonProfile">X</Button>
+                    <Button className="buttonProfile" onClick={()=>{
+                        navegador("/settings")
+                    }}><img className="imgAdjust" src="https://img.freepik.com/iconos-gratis/configuracion_318-667509.jpg?w=360"></img></Button>
                     <Button className="buttonProfile">X</Button>
                 </Col>
-                <Col className="information">
+                {/* <Col className="information">
                     <p>E-mail:{credenciales.user.email}</p><br></br>
                     <p>Telefono:{credenciales.user.addres}</p>
-                </Col>
-            </Row>
+                </Col> */}
+            </Col>
             <br></br>
-            <Row className="sendButton">
-                <Col onClick={() => {
-                    /* navegador("/") */
-                    /* localStorage.clear() */
-                    dispatch(logOut())
-                    navegador("/")
-                }}>Logout</Col><br></br>
-            </Row>
+
         </Container>
     )
 }

@@ -11,6 +11,7 @@ import Ftitulo from "./Containers/Ftitulo/Ftitulo"
 import Profile from "./Containers/Profile/Profile"
 import Purchase from "./Containers/Purchase/Purchase"
 import Invoice from "./Containers/Invoice/Invoice"
+import Settings from "./Containers/Settings/Settings"
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Header/>
         <Routes>
           <Route path="/" element={<Home/>}/>
+          <Route path="/settings" element={<Settings/>}/>
           <Route path="/admin" element={<Admin/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>

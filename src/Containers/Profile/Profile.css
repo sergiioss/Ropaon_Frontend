@@ -1,10 +1,11 @@
 .profile{
-    display: flex;
+    /* display: flex;
     justify-content:center;
-    align-items: center;
+    align-items: center; */
     flex-direction: column;
     color: White;
-    height: 80vh;
+    height: 100vh;
+    margin-top:14em;
 }
 .photo{
     margin-right: 20em;
@@ -17,11 +18,28 @@
     font-size:20px;
     margin-bottom:70px;
     font-weight:bold;
-    color:aliceblue
+    color:aliceblue;
+    margin-left:90px;
 }
 .buttonProfile{
     margin-top:20px;
     margin-right: 20px;
+}
+.logoutButton{
+    display: flex;
+    width: 2em;
+    height: 2em;
+    color: white;
+    margin-top: 1em;
+    border-radius: 1em;
+    cursor:pointer;
+}
+.imgLogout{
+    margin-left: 20px;
+}
+.imgAdjust{
+    width: 30px;
+    height: 30px;
 }
 
 

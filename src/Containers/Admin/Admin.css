@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top:14em;
 } 
 .msgIsError{
     color: red;
@@ -9,6 +10,7 @@
 .mb-3{
     width: 15em;
     margin-right: 10em;
+    color:white;
 }
 
 .cbutton{
@@ -18,4 +20,5 @@
 .letters{
     font-size:1.3em;
     width: 14em;
+    color:white;
 }
