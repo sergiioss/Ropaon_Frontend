@@ -6,6 +6,7 @@ import { logOut } from '../User/userSlice'
 import { useNavigate } from 'react-router-dom'
 import { Container, Row, Col } from 'react-bootstrap'
 import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 
 const Profile = props => {
@@ -19,29 +20,27 @@ const Profile = props => {
     return (
         <Container className="profile">
             <Row>
-                <Col className="photo">
+                    <p className="welcomeProfile">BIENVENIDO A TU PERFIL!</p>
+                <Col className="photo" xs={4} sm={4} md={4} xl={4}>
+                    <p className="namephoto">{credenciales.user.name}</p>
                     <Card.Img src={credenciales.user.photo}></Card.Img>
+                    <Button className="buttonProfile">X</Button>
+                    <Button className="buttonProfile">X</Button>
                 </Col>
                 <Col className="information">
-                    <p>BIENVENIDO! </p>
-                    <p>Nombre:{credenciales.user.name}</p><br></br>
                     <p>E-mail:{credenciales.user.email}</p><br></br>
                     <p>Telefono:{credenciales.user.addres}</p>
                 </Col>
             </Row>
-
-
-            <div>
-                <div className="perfil">
-
-                </div>
-                <div className="sendButton" onClick={() => {
+            <br></br>
+            <Row className="sendButton">
+                <Col onClick={() => {
                     /* navegador("/") */
                     /* localStorage.clear() */
                     dispatch(logOut())
                     navegador("/")
-                }}>Logout</div><br></br>
-            </div>
+                }}>Logout</Col><br></br>
+            </Row>
         </Container>
     )
 }

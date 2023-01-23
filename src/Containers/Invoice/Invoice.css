@@ -5,7 +5,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     box-sizing:border-box;
-    background-color: rgb(169, 185, 244);
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(85,89,143,1) 63%, rgba(0,212,255,1) 100%); */
     color: black;
     height: auto;   
     width: 100vw;
@@ -22,7 +22,7 @@
 }
 .colinvoi{
     width: 20em; 
-    /* margin-right: 9em; */
+    margin-right: 9em;
 }
 .colinvoic{
     width: 15em; 
@@ -37,6 +37,7 @@
 .maincol{
     display: grid;
     grid-template-columns: 1fr,1fr,1fr,1fr;
+   
 }
 .mpay{
     all:unset;

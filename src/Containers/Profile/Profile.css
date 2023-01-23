@@ -3,8 +3,26 @@
     justify-content:center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(169, 185, 244);
-    color: black;
+    color: White;
     height: 80vh;
-    width: 100vw;
 }
+.photo{
+    margin-right: 20em;
+}
+.namephoto{
+    font-size:40px;
+    font-weight: bolder;
+}
+.welcomeProfile{
+    font-size:20px;
+    margin-bottom:70px;
+    font-weight:bold;
+    color:aliceblue
+}
+.buttonProfile{
+    margin-top:20px;
+    margin-right: 20px;
+}
+
+
+

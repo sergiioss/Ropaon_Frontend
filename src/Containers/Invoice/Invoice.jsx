@@ -89,7 +89,6 @@ const Invoice = (props) => {
             return previousValue + currentValue;
         });
     }
-    console.log(createInvoice.Purchase.length)
     if(!createInvoice.Purchase.length == 0){
     return (
         <Container className="invoice">
@@ -110,15 +109,15 @@ const Invoice = (props) => {
                         <div data={purchase} key={i} buy="1" />,
                         <div>{products.push(purchase.id)}</div>,
                         <div className="elmi" key={i}>{array1.push(purchase.product_price)}</div>,
-                        <Row key={i} xs={12} sm={12} md={12} lg={12} xl={12} xxl={8}>
-                            <Col className="maincol" xs={4} sm={4} md={4} lg={4} xl={6} xxl={6}>
+                        <Col key={i} xs={12} sm={12} md={12} lg={12} xl={12} xxl={12}>
+                            <Row className="maincol" xs={4} sm={4} md={4} lg={4} xl={10} xxl={6}>
                                 <th className="colinvoi">{purchase.name}</th>
                                 <th className="colinvoic">{purchase.product_price},00 €</th>
                                 <th className="colinvoic">{purchase.size}</th>
                                 <th className="colinvoic">{purchase.color}</th>
                                 <th className="colinvoic"><img className="fotoinvoice" src={purchase.url}></img></th>
-                            </Col>
-                        </Row>
+                            </Row>
+                        </Col>
                     ))
                 }
             </Row>
