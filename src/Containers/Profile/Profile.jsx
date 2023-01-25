@@ -15,7 +15,6 @@ const Profile = props => {
     const dispatch = useDispatch()
     const navegador = useNavigate()
     const photo = credenciales.user.photo
-    console.log(credenciales)
 
     return (
         <Container className="profile">
@@ -31,7 +30,7 @@ const Profile = props => {
                 </Row>  
                 <Col className="photo" xs={4} sm={4} md={4} xl={4}>
                     <p className="namephoto">{credenciales.user.name}</p>
-                    <Card.Img src={credenciales.user.photo}></Card.Img>
+                    <img className="cutrefoto" src={credenciales.user.photo}></img>
                     <Button className="buttonProfile" onClick={()=>{
                         navegador("/settings")
                     }}><img className="imgAdjust" src="https://img.freepik.com/iconos-gratis/configuracion_318-667509.jpg?w=360"></img></Button>

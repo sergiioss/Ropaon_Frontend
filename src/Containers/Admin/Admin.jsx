@@ -6,7 +6,6 @@ import { selectDatosUsuario } from "../User/userSlice"
 import axios from "axios"
 import { NavLink } from "react-router-dom"
 import { selectProduct } from "./adminSlice"
-import { selectPurchase } from "../Purchase/purchaseSlice"
 
 const Admin = (props) => {
     const dispatch = useDispatch();

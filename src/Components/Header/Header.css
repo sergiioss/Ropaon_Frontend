@@ -28,7 +28,6 @@
 }
 .nav2{
     background: linear-gradient(90deg, rgba(3,2,8,1) 0%, rgba(45,45,56,1) 40%, rgba(83,83,83,1) 100%);
-    height: auto;
 }
 .lin{
     all:unset;

@@ -1,0 +1,21 @@
+.settings{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin-top:14em;
+}
+.photoSettings{
+    border-radius: 50%;
+    margin-bottom: 5em;
+}
+.inputProfile{
+    width: 100px;
+}
+.inputProfileForm{
+    max-width: 500px;
+}
+.buttonSett{
+    margin-right: 50px;
+}
