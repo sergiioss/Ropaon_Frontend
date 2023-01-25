@@ -42,7 +42,7 @@ export const userSlice = createSlice({
 
 export const loginUsuario = (body) => async (dispatch) => {
     try{
-        const user = await axios.post('https://ropaon-production.up.railway.app/api/login',body);
+        const user = await axios.post(/* 'https://ropaon-production.up.railway.app/api/login' */'http://localhost:8000/api/login',body);
         let decodificarToken = jwt(user.data.token);
         console.log(decodificarToken)
         if(user.status === 200){
@@ -64,7 +64,7 @@ export const logOut = () => (dispatch) => {
 
 export const registerUser = (name, addres, email, password) => async (dispatch) => {
     try {
-        const user = await axios.post('https://ropaon-production.up.railway.app/api/register',
+        const user = await axios.post(/* 'https://ropaon-production.up.railway.app/api/register' */'http://localhost:8000/api/register',
         {
             name: name,
             addres: addres,
