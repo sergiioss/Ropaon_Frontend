@@ -3,9 +3,10 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 import InputGroup from 'react-bootstrap/InputGroup'
 import Form from 'react-bootstrap/Form'
 import { useDispatch, useSelector } from 'react-redux';
-import { selectDatosUsuario/* , updateUser */ } from '../User/userSlice';
+import { selectDatosUsuario, updated} from '../User/userSlice';
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -13,6 +14,10 @@ const Settings = (props) => {
     const credenciales = useSelector(selectDatosUsuario);
     const dispatch = useDispatch();
     const token = useSelector(selectDatosUsuario);
+    const navigate = useNavigate();
+    const password = useSelector(selectDatosUsuario);
+    
+    
 
     const [cred, setCred] = useState({
         name: credenciales.user.name,
@@ -28,25 +33,25 @@ const Settings = (props) => {
 
     const updUser = (event) => {
         event.preventDefault();
-        if (newCred.name == "" || newCred.name == "undefined") {
+        if (newCred.name == "") {
             newSetCred({
                 name: cred.name,
             })
             return;
-        }else if (newCred.address == ""|| newCred.address == "undefined") {
+        }else if (newCred.address == "") {
             newSetCred({
                 address: cred.address,
             })
             return;
-        }else if (newCred.photo == "" || newCred.photo == "undefined") {
+        }else if (newCred.photo == "") {
             newSetCred({
                 photo: cred.photo,
             })
             return;
         }
-        dispatch(updateUser(cred.name, cred.address, cred.photo))
+        dispatch(updateUser(newCred.name, newCred.address, newCred.photo))
     }
-    const updateUser = (name, address/* , photo */) => async (dispatch) => {
+    const updateUser = (name, address, photo) => async (dispatch) => {
         try {
             const config = {
                 headers: {
@@ -56,18 +61,21 @@ const Settings = (props) => {
             const body = {
                 name: name,
                 addres: address,
-                /* photo:photo */
+                photo:photo,
+                password:`${token.user.password}`
             }
             const user = await axios.put('http://localhost:8000/api/updateduser',body,config)
     
             let response = user
             if(response.status === 200){
-                console.log('hola')
-                /* dispatch(updated(response.data)) */
+                /* console.log(user) */
+                dispatch(updated(response.data))
+                setTimeout(() =>{
+                    navigate('/Profile')
+                },500)
             } 
         } catch (error) {
-            /* dispatch(logError(error)) */
-            console.log(error)
+            error
         }
     }
 

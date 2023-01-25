@@ -32,10 +32,9 @@ export const userSlice = createSlice({
             }
         },
         updated:(state, action) =>{
-            return{
-                ...state,
-                ...action.payload
-            }
+            return(
+                state.user = action.payload
+            )
         }
     },
 });
@@ -51,6 +50,7 @@ export const loginUsuario = (body) => async (dispatch) => {
                 token: user.data.token,
                 user: user.data.user
             }))
+            console.log(user)
         }
 
     }catch (error){
