@@ -7,6 +7,8 @@ import { selectDatosUsuario, updated} from '../User/userSlice';
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import jwt from 'jwt-decode'
+import jwtDecode from "jwt-decode";
 
 
 
@@ -15,10 +17,8 @@ const Settings = (props) => {
     const dispatch = useDispatch();
     const token = useSelector(selectDatosUsuario);
     const navigate = useNavigate();
-    const password = useSelector(selectDatosUsuario);
     
     
-
     const [cred, setCred] = useState({
         name: credenciales.user.name,
         address: credenciales.user.addres,
@@ -69,6 +69,8 @@ const Settings = (props) => {
             let response = user
             if(response.status === 200){
                 /* console.log(user) */
+                const decodificar = jwt(`${token.user.password}`);
+                console.log(decodificar);
                 dispatch(updated(response.data))
                 setTimeout(() =>{
                     navigate('/Profile')
