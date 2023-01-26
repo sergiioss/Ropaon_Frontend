@@ -6,7 +6,7 @@ export const userSlice = createSlice({
     name: 'usuario',
     initialState:{
         token: "",
-        user: "",
+        user: ""
     },
     reducers:{
         login: (state, action) => {
@@ -31,11 +31,6 @@ export const userSlice = createSlice({
                 successMessage: 'Te has registrado correctamente'
             }
         },
-        updated:(state, action) =>{
-            return(
-                state.user = action.payload
-            )
-        }
     },
 });
 
@@ -82,7 +77,7 @@ export const registerUser = (name, addres, email, password) => async (dispatch) 
 }
 
 
-export const {login, logout, updated} = userSlice.actions
+export const {login, logout} = userSlice.actions
 
 export const selectDatosUsuario = (state) => state.usuario
 

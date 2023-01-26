@@ -3,13 +3,11 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 import InputGroup from 'react-bootstrap/InputGroup'
 import Form from 'react-bootstrap/Form'
 import { useDispatch, useSelector } from 'react-redux';
-import { selectDatosUsuario, updated} from '../User/userSlice';
+import { selectDatosUsuario} from '../User/userSlice';
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import jwt from 'jwt-decode'
-import jwtDecode from "jwt-decode";
-
+import { useEffect } from "react";
 
 
 const Settings = (props) => {
@@ -18,13 +16,6 @@ const Settings = (props) => {
     const token = useSelector(selectDatosUsuario);
     const navigate = useNavigate();
     
-    
-    const [cred, setCred] = useState({
-        name: credenciales.user.name,
-        address: credenciales.user.addres,
-        photo: credenciales.user.photo
-    })
-
     const [newCred, newSetCred] = useState({
         name: "",
         address: "",
@@ -33,25 +24,44 @@ const Settings = (props) => {
 
     const updUser = (event) => {
         event.preventDefault();
-        if (newCred.name == "") {
-            newSetCred({
-                name: cred.name,
-            })
-            return;
-        }else if (newCred.address == "") {
-            newSetCred({
-                address: cred.address,
-            })
-            return;
-        }else if (newCred.photo == "") {
-            newSetCred({
-                photo: cred.photo,
-            })
-            return;
+        if(newCred.name == "" || newCred.name == undefined && newCred.address == "" || newCred.address == undefined &&newCred.photo == "" || newCred.photo == undefined){
+            setTimeout(()=>{
+                navigate("/Profile")
+            },100)
         }
-        dispatch(updateUser(newCred.name, newCred.address, newCred.photo))
+
+        if (newCred.name == "" || newCred.name == undefined) {
+            console.log('hola')
+            console.log(credenciales.user.name)
+            newSetCred({
+                name: credenciales.user.name,
+            })
+            /* console.log(newCred.name) */
+        }
+        if (newCred.address == "" || newCred.address == undefined) {
+            console.log('buenos dias')
+            console.log(credenciales.user.addres)
+            newSetCred({
+                address: credenciales.user.addres,
+            })
+           /*  console.log(newCred.address) */
+        }
+        if (newCred.photo == "" || newCred.photo == undefined) {
+            console.log('que tla')
+            console.log(credenciales.user.photo)
+            newSetCred({
+                photo: credenciales.user.photo,
+            })
+            /* console.log(newCred.photo) */
+        }
+        setTimeout(()=>{
+            dispatch(updateUser(newCred.name, newCred.address, newCred.photo))
+        },300)
     }
-    const updateUser = (name, address, photo) => async (dispatch) => {
+    const updateUser = (name, address,photo) => async (dispatch) => {
+        /* console.log(name)
+        console.log(address)
+        console.log(photo) */
         try {
             const config = {
                 headers: {
@@ -61,20 +71,15 @@ const Settings = (props) => {
             const body = {
                 name: name,
                 addres: address,
-                photo:photo,
-                password:`${token.user.password}`
+                photo:photo
             }
             const user = await axios.put('http://localhost:8000/api/updateduser',body,config)
     
             let response = user
             if(response.status === 200){
-                /* console.log(user) */
-                const decodificar = jwt(`${token.user.password}`);
-                console.log(decodificar);
-                dispatch(updated(response.data))
-                setTimeout(() =>{
-                    navigate('/Profile')
-                },500)
+                    setTimeout(()=>{
+                        navigate("/Profile")
+                    },300)
             } 
         } catch (error) {
             error
@@ -88,12 +93,15 @@ const Settings = (props) => {
         })
     }
 
+    useEffect(()=>{
+
+    },[credenciales])
 
     return (
         <Container className="settings">
             <Col>
                 <Col>
-                    <img className="photoSettings" src={cred.photo}></img>
+                    <img className="photoSettings" src={credenciales.user.photo}></img>
                 </Col>
                 <Col>
                     <Form>
@@ -106,7 +114,7 @@ const Settings = (props) => {
                                 className="inputProfileForm"
                                 aria-label="Small"
                                 aria-describedby="inputGroup-sizing-sm"
-                                defaultValue={cred.name}
+                                defaultValue={credenciales.user.name}
                                 placeholder="Introduce tu nombre"
                             />
                         </InputGroup>
@@ -119,7 +127,7 @@ const Settings = (props) => {
                                 className="inputProfileForm"
                                 aria-label="Small"
                                 aria-describedby="inputGroup-sizing-sm"
-                                defaultValue={cred.address}
+                                defaultValue={credenciales.user.addres}
                                 placeholder="Introduce la dirección"
                             />
                         </InputGroup>
@@ -132,7 +140,7 @@ const Settings = (props) => {
                                 className="inputProfileForm"
                                 aria-label="Small"
                                 aria-describedby="inputGroup-sizing-sm"
-                                defaultValue={cred.photo}
+                                defaultValue={credenciales.user.photo}
                                 placeholder="Introduce la url de la foto"
                             />
                         </InputGroup>
