@@ -80,7 +80,7 @@ const Header = props => {
                         <NavLink className="components ad" to="/admin">Admin</NavLink>
                     </Col>
                     <Col xs={12} sm={12} md={2} lg={2} xl={3} xxl={3}>
-                        <span>Bienvenido, {credenciales.user.name}<br></br>
+                        <span>Bienvenid@, {credenciales.user.name}<br></br>
                             <NavLink className="components pro" to="/Profile">Mi perfil</NavLink></span>
                     </Col>
                 </Row>
@@ -120,7 +120,7 @@ const Header = props => {
                         <NavLink to="/login"><img className="components login" src={img3} /></NavLink>
                     </Col>
                     <Col xs={4} sm={4} md={4} lg={3} xl={3} xxl={3}>
-                        <span>Bienvenido, {credenciales.user.name}<br></br>
+                        <span>Bienvenid@, {credenciales.user.name}<br></br>
                             <NavLink className="components mypro" to="/Profile">Mi perfil</NavLink></span>
                     </Col>
                 </Row>

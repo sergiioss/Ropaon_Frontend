@@ -40,9 +40,14 @@
 .imgAdjust{
     width: 30px;
     height: 30px;
+    
 }
 .cutrefoto{
     border-radius: 50%;
+    max-width: 400px;
+    min-width: 400px;
+    max-height: 400px;
+    min-height: 400px;
 }
 
 

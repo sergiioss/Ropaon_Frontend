@@ -93,9 +93,12 @@ const Settings = (props) => {
         })
     }
 
-    useEffect(()=>{
+    const cancel = () =>{
+        setTimeout(()=>{
+            navigate("/Profile")
+        },300)
+    }
 
-    },[credenciales])
 
     return (
         <Container className="settings">
@@ -147,7 +150,7 @@ const Settings = (props) => {
                         <Button className="buttonSett" type="submit" onClick={updUser}>
                             SAVE
                         </Button>
-                        <Button>
+                        <Button onClick={cancel}>
                             CANCEL
                         </Button>
                     </Form>
