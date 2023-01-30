@@ -38,14 +38,12 @@ export const loginUsuario = (body) => async (dispatch) => {
     try{
         const user = await axios.post(/* 'https://ropaon-production.up.railway.app/api/login' */'http://localhost:8000/api/login',body);
         let decodificarToken = jwt(user.data.token);
-        console.log(decodificarToken)
         if(user.status === 200){
             dispatch(login({
                 ...decodificarToken,
                 token: user.data.token,
                 user: user.data.user
             }))
-            console.log(user)
         }
 
     }catch (error){
