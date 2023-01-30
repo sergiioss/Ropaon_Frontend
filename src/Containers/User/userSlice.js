@@ -37,7 +37,8 @@ export const userSlice = createSlice({
         },
         update:(state, action)=>{
             return{
-                user:action.payload
+                ...state,
+                ...action.payload
             }
         }
     },

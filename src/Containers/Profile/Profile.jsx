@@ -14,38 +14,11 @@ import axios from 'axios'
 
 const Profile = props => {
 
-    /* const credenciales = useSelector(selectDatosUsuario) */
+    const credenciales = useSelector(selectDatosUsuario)
     const dispatch = useDispatch()
     const navegador = useNavigate()
     const token = useSelector(selectDatosUsuario)
-    /* const photo = credenciales.user.photo */
-    /* console.log(token.user.user.name, token.user.user.addres, token.user.user.photo) */
     
-    
-    const [me, setMe] = useState({
-        name:"",
-        photo:"",
-        address:""
-
-    })
-    
-
-    useEffect(()=>{
-        const config = {
-            headers: {
-                "Authorization": `Bearer ${token.token}`
-            }
-        }
-        axios.get(/* 'https://ropaon-production.up.railway.app/api/me' */'http://localhost:8000/api/me',config)
-            .then(resp => {
-                console.log(resp)
-                setMe({
-                    name: resp.data.name,
-                    photo: resp.data.photo,
-                    address:resp.data.addres
-                })
-            })
-    },[])
 
     return (
         <Container className="profile">
@@ -60,14 +33,10 @@ const Profile = props => {
                     }}>Logout<img className="imgLogout" src="http://cdn.onlinewebfonts.com/svg/img_119401.png"></img></Col><br></br>
                 </Row>  
                 <Col className="photo" xs={4} sm={4} md={4} xl={4}>
-                    <p className="namephoto">{me.name}</p>
-                    <img className="cutrefoto" src={me.photo}></img>
+                    <p className="namephoto">{credenciales.user.name}</p>
+                    <img className="cutrefoto" src={credenciales.user.photo}></img>
                     <Button className="buttonProfile" onClick={()=>{
-                        navegador("/settings")/* dispatch(newUpdated(
-                                me.name, 
-                                me.address, 
-                                me.photo
-                        )) */
+                        navegador("/settings")
                     }}><img className="imgAdjust" src="https://img.freepik.com/iconos-gratis/configuracion_318-667509.jpg?w=360"></img></Button>
                     <Button className="buttonProfile">X</Button>
                 </Col>

@@ -3,7 +3,7 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 import InputGroup from 'react-bootstrap/InputGroup'
 import Form from 'react-bootstrap/Form'
 import { useDispatch, useSelector } from 'react-redux';
-import { selectDatosUsuario} from '../User/userSlice';
+import { newUpdated, selectDatosUsuario, update} from '../User/userSlice';
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -24,12 +24,7 @@ const Settings = (props) => {
 
     const updUser = (event) => {
         event.preventDefault();
-        if(newCred.name == "" || newCred.name == undefined && newCred.address == "" || newCred.address == undefined &&newCred.photo == "" || newCred.photo == undefined){
-            setTimeout(()=>{
-                navigate("/Profile")
-            },100)
-        }
-
+        
         if (newCred.name == "" || newCred.name == undefined) {
             console.log('hola')
             console.log(credenciales.user.name)
@@ -55,13 +50,15 @@ const Settings = (props) => {
             /* console.log(newCred.photo) */
         }
         setTimeout(()=>{
+            dispatch(newUpdated(newCred.name, newCred.address, newCred.photo))
+        },300)
+        setTimeout(()=>{
             dispatch(updateUser(newCred.name, newCred.address, newCred.photo))
         },300)
+        
+        
     }
     const updateUser = (name, address,photo) => async (dispatch) => {
-        /* console.log(name)
-        console.log(address)
-        console.log(photo) */
         try {
             const config = {
                 headers: {
