@@ -6,7 +6,11 @@ export const userSlice = createSlice({
     name: 'usuario',
     initialState:{
         token: "",
-        user: ""
+        user: {
+            name:"",
+            addres:"",
+            photo:""
+        }
     },
     reducers:{
         login: (state, action) => {
@@ -31,6 +35,11 @@ export const userSlice = createSlice({
                 successMessage: 'Te has registrado correctamente'
             }
         },
+        update:(state, action)=>{
+            return{
+                user:action.payload
+            }
+        }
     },
 });
 
@@ -55,6 +64,17 @@ export const logOut = () => (dispatch) => {
     dispatch(logout());
 };
 
+export const newUpdated = (name, address, photo) => (dispatch) => {
+    console.log(name, address, photo)
+    dispatch(update({
+        user:{
+            name:name,
+            addres:address,
+            photo:photo
+        }
+    }))
+}
+
 export const registerUser = (name, addres, email, password) => async (dispatch) => {
     try {
         const user = await axios.post(/* 'https://ropaon-production.up.railway.app/api/register' */'http://localhost:8000/api/register',
@@ -75,7 +95,7 @@ export const registerUser = (name, addres, email, password) => async (dispatch) 
 }
 
 
-export const {login, logout} = userSlice.actions
+export const {login, logout, update} = userSlice.actions
 
 export const selectDatosUsuario = (state) => state.usuario
 

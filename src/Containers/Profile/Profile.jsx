@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import "./Profile.css"
 import { useSelector, useDispatch } from 'react-redux';
-import { selectDatosUsuario } from '../User/userSlice';
+import { newUpdated, selectDatosUsuario, update } from '../User/userSlice';
 import { logOut } from '../User/userSlice'
 import { useNavigate } from 'react-router-dom'
 import { Container, Row, Col } from 'react-bootstrap'
@@ -19,6 +19,7 @@ const Profile = props => {
     const navegador = useNavigate()
     const token = useSelector(selectDatosUsuario)
     /* const photo = credenciales.user.photo */
+    /* console.log(token.user.user.name, token.user.user.addres, token.user.user.photo) */
     
     
     const [me, setMe] = useState({
@@ -27,6 +28,7 @@ const Profile = props => {
         address:""
 
     })
+    
 
     useEffect(()=>{
         const config = {
@@ -61,7 +63,11 @@ const Profile = props => {
                     <p className="namephoto">{me.name}</p>
                     <img className="cutrefoto" src={me.photo}></img>
                     <Button className="buttonProfile" onClick={()=>{
-                        navegador("/settings")
+                        navegador("/settings")/* dispatch(newUpdated(
+                                me.name, 
+                                me.address, 
+                                me.photo
+                        )) */
                     }}><img className="imgAdjust" src="https://img.freepik.com/iconos-gratis/configuracion_318-667509.jpg?w=360"></img></Button>
                     <Button className="buttonProfile">X</Button>
                 </Col>
