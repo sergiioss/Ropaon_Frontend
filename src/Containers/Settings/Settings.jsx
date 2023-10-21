@@ -3,11 +3,10 @@ import { Container, Row, Col, Button } from 'react-bootstrap'
 import InputGroup from 'react-bootstrap/InputGroup'
 import Form from 'react-bootstrap/Form'
 import { useDispatch, useSelector } from 'react-redux';
-import { newUpdated, selectDatosUsuario, update} from '../User/userSlice';
+import { newUpdated, selectDatosUsuario, update } from '../User/userSlice';
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 
 
 const Settings = (props) => {
@@ -15,50 +14,55 @@ const Settings = (props) => {
     const dispatch = useDispatch();
     const token = useSelector(selectDatosUsuario);
     const navigate = useNavigate();
-    
+
+
     const [newCred, newSetCred] = useState({
         name: "",
         address: "",
         photo: ""
     })
+    console.log(newCred.name, newCred.address, newCred.photo);
 
     const updUser = (event) => {
         event.preventDefault();
-        
-        if (newCred.name == "" || newCred.name == undefined) {
-            console.log('hola')
-            console.log(credenciales.user.name)
-            newSetCred({
-                name: credenciales.user.name,
-            })
-            /* console.log(newCred.name) */
+        console.log(newCred.name.length)
+
+        if (newCred.name.length == 0) {
+            console.log('BIIIIIIIIIIIIIIIIIIIIIEN')
+            setTimeout(() => {
+                newSetCred({
+                    name: "sergio",
+                })
+            }, 100)
         }
-        if (newCred.address == "" || newCred.address == undefined) {
+        if (newCred.address == "") {
             console.log('buenos dias')
-            console.log(credenciales.user.addres)
-            newSetCred({
-                address: credenciales.user.addres,
-            })
-           /*  console.log(newCred.address) */
+            setTimeout(() => {
+                newSetCred({
+                    address: "BArca",
+                })
+            }, 100)
         }
-        if (newCred.photo == "" || newCred.photo == undefined) {
+        if (newCred.photo == "") {
             console.log('que tla')
-            console.log(credenciales.user.photo)
-            newSetCred({
-                photo: credenciales.user.photo,
-            })
-            /* console.log(newCred.photo) */
+            setTimeout(() => {
+                newSetCred({
+                    photo: "https://i.blogs.es/6015fb/logo-forocoches/1366_2000.jpg",
+                })
+            }, 100)
         }
-        setTimeout(()=>{
+
+        setTimeout(() => {
             dispatch(newUpdated(newCred.name, newCred.address, newCred.photo))
-        },300)
-        setTimeout(()=>{
+        }, 300)
+        setTimeout(() => {
             dispatch(updateUser(newCred.name, newCred.address, newCred.photo))
-        },300)
-        
-        
+        }, 300)
+        console.log(newCred.name, newCred.address, newCred.photo)
+
     }
-    const updateUser = (name, address,photo) => async (dispatch) => {
+
+    const updateUser = (name, address, photo) => async () => {
         try {
             const config = {
                 headers: {
@@ -68,16 +72,16 @@ const Settings = (props) => {
             const body = {
                 name: name,
                 addres: address,
-                photo:photo
+                photo: photo
             }
-            const user = await axios.put('http://localhost:8000/api/updateduser',body,config)
-    
+            const user = await axios.put('http://localhost:8000/api/updateduser', body, config)
+
             let response = user
-            if(response.status === 200){
-                    setTimeout(()=>{
-                        navigate("/Profile")
-                    },300)
-            } 
+            if (response.status === 200) {
+                setTimeout(() => {
+                    navigate("/Profile")
+                }, 300)
+            }
         } catch (error) {
             error
         }
@@ -90,10 +94,10 @@ const Settings = (props) => {
         })
     }
 
-    const cancel = () =>{
-        setTimeout(()=>{
+    const cancel = () => {
+        setTimeout(() => {
             navigate("/Profile")
-        },300)
+        }, 300)
     }
 
 

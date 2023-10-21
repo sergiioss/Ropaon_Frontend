@@ -15,6 +15,7 @@ const Header = props => {
     const navegador = useNavigate();
     const credenciales = useSelector(selectDatosUsuario);
     const dispatch = useDispatch();
+    console.log(credenciales.user.id);
 
     const changePage = (event) => {
         if (event.key === "Enter") {

@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom"
 import './App.css'
 import Home from './Containers/Home/Home'
-import Admin from './Containers/Admin/admin'
+import Admin from './Containers/Admin/Admin'
 import Login from "./Containers/User/Login/Login"
 import Register from "./Containers/User/Register/Register"
 import Header from "./Components/Header/Header"
