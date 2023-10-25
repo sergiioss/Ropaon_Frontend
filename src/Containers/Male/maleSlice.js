@@ -19,7 +19,7 @@ export const maleSlice = createSlice({
 
 export const female = (event) => async (dispatch) => {
     try {
-        const fem = await axios.get(/* `https://ropaon-production.up.railway.app/api/productgenderf` */'http://localhost:8000/api/productgenderf');
+        const fem = await axios.get(`http://sergi.lighthousemarketing.es/public/api/productgenderf`/* 'http://localhost:8000/api/productgenderf' */);
         if (!fem.data.succes === true) {
             dispatch(addGender({
                 Error: "error"

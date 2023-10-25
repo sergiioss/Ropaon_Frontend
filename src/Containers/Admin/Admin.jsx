@@ -69,7 +69,7 @@ const Admin = (props) => {
                 color: color,
                 gender: gender
             }
-            const product = await axios.post(/* 'https://ropaon-production.up.railway.app/api/create' */'http://localhost:8000/api/create', body, config)
+            const product = await axios.post('http://sergi.lighthousemarketing.es/public/api/create'/* 'http://localhost:8000/api/create' */, body, config)
 
             let response = product
 
@@ -102,7 +102,7 @@ const Admin = (props) => {
                 color: color,
                 gender: gender
             }
-            const product = await axios.put(/* `https://ropaon-production.up.railway.app/api/updatedproduct/${newId}` */`http://localhost:8000/api/updatedproduct/${newId}`, body, config);
+            const product = await axios.put(`http://sergi.lighthousemarketing.es/public/api/updatedproduct/${newId}`/* `http://localhost:8000/api/updatedproduct/${newId}` */, body, config);
             
             let response = product
             console.log(response);
@@ -128,7 +128,7 @@ const Admin = (props) => {
                     "Authorization": `Bearer ${token.token}`
                 }
             }
-            const product = await axios.delete(/* `https://ropaon-production.up.railway.app/api/deleteproduct/${newId}` */`http://localhost:8000/api/deleteproduct/${newId}`, config);
+            const product = await axios.delete(`http://sergi.lighthousemarketing.es/public/api/deleteproduct/${newId}`/* `http://localhost:8000/api/deleteproduct/${newId}` */, config);
             
             let response = product
             if (response.status === 200) {

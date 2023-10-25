@@ -12,7 +12,7 @@ const Home = (props) => {
     })
 
     useEffect(() => {
-        axios.get(/* 'https://ropaon-production.up.railway.app/api/productall' */'http://localhost:8000/api/productall')
+        axios.get('http://sergi.lighthousemarketing.es/public/api/productall'/* 'http://localhost:8000/api/productall' */)
             .then(resp => {
                 setProducts({
                     prod: resp.data.data
