@@ -71,7 +71,7 @@ const Invoice = (props) => {
                 user_id: user_id,
                 payment: payment
             }
-            const purchase = await axios.post('http://sergi.lighthousemarketing.es/public/api/purchase'/* 'http://localhost:8000/api/purchase' */,body, config)
+            const purchase = await axios.post('https://sergi.lighthousemarketing.es/public/api/purchase'/* 'http://localhost:8000/api/purchase' */,body, config)
     
             let response = purchase;
             console.log(response)

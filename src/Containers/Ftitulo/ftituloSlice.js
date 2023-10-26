@@ -20,7 +20,7 @@ export const ftituloSlice = createSlice({
 
 export const productos = (event) => async (dispatch) => {
     try {
-        const product = await axios.get(`http://sergi.lighthousemarketing.es/public/api/productname/${event}`/* `http://localhost:8000/api/productname/${event}` */);
+        const product = await axios.get(`https://sergi.lighthousemarketing.es/public/api/productname/${event}`/* `http://localhost:8000/api/productname/${event}` */);
         if (!product.data.succes === true) {
             dispatch(isError({
                 isError: "Error"

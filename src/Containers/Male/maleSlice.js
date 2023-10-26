@@ -19,7 +19,7 @@ export const maleSlice = createSlice({
 
 export const female = (event) => async (dispatch) => {
     try {
-        const fem = await axios.get(`http://sergi.lighthousemarketing.es/public/api/productgenderf`/* 'http://localhost:8000/api/productgenderf' */);
+        const fem = await axios.get(`https://sergi.lighthousemarketing.es/public/api/productgenderf`/* 'http://localhost:8000/api/productgenderf' */);
         if (!fem.data.succes === true) {
             dispatch(addGender({
                 Error: "error"
@@ -37,7 +37,7 @@ export const female = (event) => async (dispatch) => {
 }
 export const male = (event) => async (dispatch) => {
     try {
-        const mal = await axios.get(`http://sergi.lighthousemarketing.es/public/api/productgenderm`/* 'http://localhost:8000/api/productgenderm' */);
+        const mal = await axios.get(`https://sergi.lighthousemarketing.es/public/api/productgenderm`/* 'http://localhost:8000/api/productgenderm' */);
         if (!mal.data.succes === true) {
             dispatch(addGender({
                 Error: "error"

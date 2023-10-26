@@ -46,7 +46,7 @@ export const userSlice = createSlice({
 
 export const loginUsuario = (body) => async (dispatch) => {
     try{
-        const user = await axios.post('http://sergi.lighthousemarketing.es/public/api/login'/* 'http://localhost:8000/api/login' */,body);
+        const user = await axios.post('https://sergi.lighthousemarketing.es/public/api/login'/* 'http://localhost:8000/api/login' */,body);
         let decodificarToken = jwt(user.data.token);
         if(user.status === 200){
             dispatch(login({
@@ -78,7 +78,7 @@ export const newUpdated = (name, address, photo) => (dispatch) => {
 
 export const registerUser = (name, addres, email, password) => async (dispatch) => {
     try {
-        const user = await axios.post('http://sergi.lighthousemarketing.es/public/api/register'/* 'http://localhost:8000/api/register' */,
+        const user = await axios.post('https://sergi.lighthousemarketing.es/public/api/register'/* 'http://localhost:8000/api/register' */,
         {
             name: name,
             addres: addres,

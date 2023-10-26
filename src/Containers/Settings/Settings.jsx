@@ -74,7 +74,7 @@ const Settings = (props) => {
                 addres: address,
                 photo: photo
             }
-            const user = await axios.put(/* 'http://localhost:8000/api/updateduser' */'http://sergi.lighthousemarketing.es/public/api/updateduser', body, config)
+            const user = await axios.put(/* 'http://localhost:8000/api/updateduser' */'https://sergi.lighthousemarketing.es/public/api/updateduser', body, config)
 
             let response = user
             if (response.status === 200) {
