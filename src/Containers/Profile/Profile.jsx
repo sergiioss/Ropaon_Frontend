@@ -30,7 +30,7 @@ const Profile = props => {
                         /* localStorage.clear() */
                         dispatch(logOut())
                         navegador("/")
-                    }}>Logout<img className="imgLogout" src="http://cdn.onlinewebfonts.com/svg/img_119401.png"></img></Col><br></br>
+                    }}>Logout<img className="imgLogout" src="https://cdn.onlinewebfonts.com/svg/img_119401.png"></img></Col><br></br>
                 </Row>  
                 <Col className="photo" xs={4} sm={4} md={4} xl={4}>
                     <p className="namephoto">{credenciales.user.name}</p>
