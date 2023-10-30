@@ -3,7 +3,6 @@
     color:white;
     height: auto;
     width: 100%;
-    position:fixed;
     top:0;
     z-index:1;
 }
@@ -28,6 +27,8 @@
 }
 .nav2{
     background: linear-gradient(90deg, rgba(3,2,8,1) 0%, rgba(45,45,56,1) 40%, rgba(83,83,83,1) 100%);
+    display: flex;
+    justify-content: space-between;
 }
 .lin{
     all:unset;

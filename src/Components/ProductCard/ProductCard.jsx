@@ -26,80 +26,88 @@ const ProductCard = props => {
 
     if (!credenciales?.token) {
         return (
-            <Row xs={1} md={3} className="g-4 img-fluid">
+            <Row xs={12} sm={12} md={12} xl={12} className="g-4 img-fluid">
                 {Array.from({ length: 1 }).map((_, idx) => (
-                    <Col key={idx} className="card-cont">
-                        <Card className="card-global">
-                            <Card.Body className="card">
-                                <Card.Title>{props.data.name}</Card.Title>
-                                <Card.Img className="foto" src={props.data.url} />
-                                <Card.Text>
+                    <Row key={idx}>
+                        <Card style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src={props.data.url} />
+                        <Card.Body>
+                            <Card.Title>{props.data.name}</Card.Title>
+                            <Row className="size-color">
+                                <span>
                                     Talla: {props.data.size}
-                                </Card.Text>
-                                <Card.Text>
+                                </span>
+                                <span  className="color">
                                     Color: {props.data.color}
-                                </Card.Text>
-                                <Card.Text>
+                                </span>
+                                <span  className="color">
                                     Precio: {props.data.product_price},00 €
-                                </Card.Text>
-                            </Card.Body>
+                                </span>
+                            </Row>
+                        </Card.Body>
                         </Card>
-                    </Col>
+                    </Row>
                 ))}
             </Row>
 
         );
     } else if (credenciales.user.id === 1) {
         return (
-            <Row xs={1} md={3} className="g-4 img-fluid">
+            <Row xs={12} sm={12} md={12} xl={12} className="g-4 img-fluid">
                 {Array.from({ length: 1 }).map((_, idx) => (
-                    <Col key={idx} className="card-cont">
-                        <Card className="card-global">
-                            <Card.Body className="card">
-                                <Card.Title>{props.data.name}</Card.Title>
-                                <Card.Img className="foto" src={props.data.url} />
-                                <Card.Text>
+                    <Row key={idx}>
+                        <Card style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src={props.data.url} />
+                        <Card.Body>
+                            <Card.Title>{props.data.name}</Card.Title>
+                            <Row className="size-color">
+                                <span>
                                     Talla: {props.data.size}
-                                </Card.Text>
-                                <Card.Text>
+                                </span>
+                                <span  className="color">
                                     Color: {props.data.color}
-                                </Card.Text>
-                                <Card.Text>
+                                </span>
+                                <span  className="color">
                                     Precio: {props.data.product_price},00 €
-                                </Card.Text>
-                                {props.buy != 1 && <Button onClick={() => { dispatch(updateProduct(props.data)) }}>
+                                </span>
+                            </Row>
+                            {props.buy != 1 && 
+                            <Button onClick={() => { dispatch(updateProduct(props.data)) }}>
                                     Seleccionar
-                                </Button>}
-                            </Card.Body>
+                            </Button>}
+                        </Card.Body>
                         </Card>
-                    </Col>
+                    </Row>
                 ))}
             </Row>
         )
     } else {
         return (
-            <Row xs={1} md={3} className="g-4 img-fluid">
+            <Row xs={12} sm={12} md={12} xl={12} className="g-4 img-fluid">
                 {Array.from({ length: 1 }).map((_, idx) => (
-                    <Col key={idx} className="card-cont">
-                        <Card className="card-global">
-                            <Card.Body className="card">
-                                <Card.Title>{props.data.name}</Card.Title>
-                                <Card.Img className="foto" src={props.data.url} />
-                                <Card.Text>
+                    <Row key={idx} className="card-cont">
+                        <Card style={{ width: '18rem' }}>
+                        <Card.Img variant="top" src={props.data.url} />
+                        <Card.Body>
+                            <Card.Title>{props.data.name}</Card.Title>
+                            <Row className="size-color">
+                                <span>
                                     Talla: {props.data.size}
-                                </Card.Text>
-                                <Card.Text>
+                                </span>
+                                <span  className="color">
                                     Color: {props.data.color}
-                                </Card.Text>
-                                <Card.Text>
+                                </span>
+                                <span  className="color">
                                     Precio: {props.data.product_price},00 €
-                                </Card.Text>
-                                {props.buy != 1 && <Button onClick={() => { dispatch(alertClick(props.data)) }}>
+                                </span>
+                            </Row>
+                            {props.buy != 1 && 
+                            <Button onClick={() => { dispatch(alertClick(props.data)) }}>
                                     Comprar
-                                </Button>}
-                            </Card.Body>
+                            </Button>}
+                        </Card.Body>
                         </Card>
-                    </Col>
+                    </Row>
                 ))}
             </Row>
         );

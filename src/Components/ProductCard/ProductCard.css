@@ -1,22 +1,19 @@
-.foto{
+/* .foto{
     height: 10em;
 }
 
-.card-global{
-    margin-bottom: 1em;
-    min-width: 15em;
-    max-width: 15em;
-    min-height: 26em;
-}
 .purchase{
     color:red;
+}
+.minw{
+    padding-right: 0;
 }
 .g-4{
     min-width: 15em;
 }
 .card-cont{
-    min-width: 15em;
-    max-width: 15em;
+    width: 20rem;
+    height: 20rem;
 }
 .fotocompra{
     width: 2em;
@@ -28,4 +25,53 @@
 }
 .card-globalc{
     all:unset;
+}
+
+.row>* {
+    padding: 0;
+    margin: 0;
+}
+.img-fluid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-global{
+    border: unset;
+    margin-bottom: 1em;
+    padding: 0;
+}
+.card-body{
+    padding: 0;
+}
+.card {
+    padding: 0;
+} */
+
+.card-img-top{
+    height: 200px;
+    object-fit: cover;
+    margin-top: 1rem;
+}
+.card-title{
+    min-height: 48px;
+}
+.card-text{
+    display: flex;
+    gap: 1rem;
+}
+.color{
+   padding: 0;
+   margin: 0;
+}
+.row>*, .col>* {
+    padding: 0;
+    margin: 0;
+}
+.btn{
+    margin-top: 1rem;
+}
+.tarjeta{
+    width: 18rem;
 }

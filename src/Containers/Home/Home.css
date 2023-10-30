@@ -4,13 +4,8 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    color: black;
-    height: auto;   
-    width: 100vw;
+    color: black;   
+    height: 100%;
+    width: 100%;
     margin-bottom: 1em;
-    margin-top: 14em;
-    
 }    
-.minw{
-    min-width: 15em;
-}

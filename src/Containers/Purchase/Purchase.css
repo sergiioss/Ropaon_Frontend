@@ -23,3 +23,9 @@
     margin-top: 3em;
     width: 15em;
 }
+
+@media (max-width : 360px){
+    .minw{
+        min-width: 0;
+    }
+}
