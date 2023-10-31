@@ -126,17 +126,17 @@ const Header = props => {
                     </Col>
                 </Row>
                 <Row className="nav2">
-                    <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
+                    <Col xs={4} sm={4} md={3} lg={3} xl={3} xxl={3}>
                         <NavLink className="lin" to="/">
                             <div >Home</div>
                         </NavLink>
                     </Col>
-                    <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
+                    <Col xs={4} sm={4} md={3} lg={3} xl={3} xxl={3}>
                         <NavLink className="lin" to="/male" onClick={() => dispatch(female())}>
                             <div >Mujer</div>
                         </NavLink>
                     </Col>
-                    <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
+                    <Col xs={4} sm={4} md={3} lg={3} xl={3} xxl={3}>
                         <NavLink className="lin" to="/male" onClick={() => dispatch(male())}>
                             <div >Hombre</div>
                         </NavLink>

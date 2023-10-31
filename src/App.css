@@ -4,6 +4,5 @@
     align-items: center;
     text-align: center;
     flex-direction: column;
-    height: auto;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(85,89,143,1) 63%, rgba(0,212,255,1) 100%);
   }

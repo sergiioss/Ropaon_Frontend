@@ -22,23 +22,29 @@ const Profile = props => {
 
     return (
         <Container className="profile">
-            <Col>
-                <Row>
-                    <Col xl={10} className="welcomeProfile">BIENVENIDO A TU PERFIL!</Col>
-                    <Col  className="logoutButton" onClick={() => {
+            <Col className="profile-2">
+                <Row className="nav-Profile">
+                    <Col className="welcomeProfile">BIENVENIDO A TU PERFIL!</Col>
+                    <Col className="logoutButton" onClick={() => {
                         /* navegador("/") */
                         /* localStorage.clear() */
                         dispatch(logOut())
                         navegador("/")
                     }}>Logout<img className="imgLogout" src="https://cdn.onlinewebfonts.com/svg/img_119401.png"></img></Col><br></br>
                 </Row>  
-                <Col className="photo" xs={4} sm={4} md={4} xl={4}>
+                <Col className="photo" xs={12} sm={12} md={4} xl={4}>
                     <p className="namephoto">{credenciales.user.name}</p>
                     <img className="cutrefoto" src={credenciales.user.photo}></img>
-                    <Button className="buttonProfile" onClick={()=>{
-                        navegador("/settings")
-                    }}><img className="imgAdjust" src="https://img.freepik.com/iconos-gratis/configuracion_318-667509.jpg?w=360"></img></Button>
-                    <Button className="buttonProfile">X</Button>
+                    <Row xs={12} md={12}>
+                        <Col xs={6} md={6} className="adjust-data">
+                            <Button onClick={()=>{
+                                navegador("/settings")
+                            }}><img className="imgAdjust" src="https://img.freepik.com/iconos-gratis/configuracion_318-667509.jpg?w=360"></img></Button>
+                        </Col>
+                        <Col xs={6} md={6}>
+                            <Button className="button-x">X</Button>
+                        </Col>
+                    </Row>
                 </Col>
                 {/* <Col className="information">
                     <p>E-mail:{credenciales.user.email}</p><br></br>
@@ -46,7 +52,6 @@ const Profile = props => {
                 </Col> */}
             </Col>
             <br></br>
-
         </Container>
     )
 }

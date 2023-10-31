@@ -3,12 +3,10 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
-    margin-top:14em;
+    margin-top: 1rem;
 }
 .photoSettings{
     border-radius: 50%;
-    margin-bottom: 5em;
     max-width: 400px;
     min-width: 400px;
     max-height: 400px;
@@ -22,4 +20,21 @@
 }
 .buttonSett{
     margin-right: 50px;
+}
+.btn{
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px){
+    .photoSettings{
+        border-radius: 50%;
+        margin-bottom: 5em;
+        min-width: 0;
+        min-height: 0;
+        width: 200px;
+        height: 200px;
+    }
+    .btn{
+        margin-bottom: 1rem;
+    }
 }
