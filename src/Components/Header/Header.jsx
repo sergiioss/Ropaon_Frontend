@@ -32,31 +32,31 @@ const Header = props => {
         return (
             <Container fluid className="header">
                 <Row className="nav">
-                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                    <Col xs={6} sm={6} md={3} lg={3} xl={3} xxl={3}>
                         <img className="components maura" src={img} />
                     </Col>
-                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                    <Col xs={6} sm={6} md={3} lg={3} xl={3} xxl={3}>
                         <input className="components input" onKeyPress={changePage} placeholder="Busqueda por articulo..." type="text" name="titulo" />
                     </Col>
-                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                    <Col xs={6} sm={6} md={3} lg={3} xl={3} xxl={3}>
                         <img className="components car" src={img2}></img>
                     </Col>
-                    <Col xs={12} sm={12} md={3} lg={3} xl={3} xxl={3}>
+                    <Col xs={6} sm={6} md={3} lg={3} xl={3} xxl={3}>
                         <NavLink to="/login"><img className="components login" src={img3} /></NavLink>
                     </Col>
                 </Row>
                 <Row className="nav2">
-                    <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
+                    <Col xs={4} sm={4} md={3} lg={3} xl={3} xxl={3}>
                         <NavLink className="lin" to="/">
                             <div >Home</div>
                         </NavLink>
                     </Col>
-                    <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
+                    <Col xs={4} sm={4} md={3} lg={3} xl={3} xxl={3}>
                         <NavLink className="lin" to="/male" onClick={() => dispatch(female())}>
                             <div >Mujer</div>
                         </NavLink>
                     </Col>
-                    <Col xs={12} sm={4} md={3} lg={3} xl={3} xxl={3}>
+                    <Col xs={4} sm={4} md={3} lg={3} xl={3} xxl={3}>
                         <NavLink className="lin" to="/male" onClick={() => dispatch(male())}>
                             <div >Hombre</div>
                         </NavLink>
