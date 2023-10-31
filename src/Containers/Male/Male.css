@@ -6,14 +6,19 @@
     flex-wrap: wrap;
     /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(85,89,143,1) 63%, rgba(0,212,255,1) 100%); */
     color: black;
-    height: auto;   
+    min-height: 67vh;   
     width: 100vw;
 }   
+.female-home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .minw{
     min-width: 15em;
 } 
 
-@media (max-width : 360px){
+@media (max-width : 768px){
     .minw{
         min-width: 0;
     }

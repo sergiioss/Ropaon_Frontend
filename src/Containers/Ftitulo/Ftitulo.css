@@ -5,10 +5,9 @@
     flex-direction: row;
     flex-wrap: wrap;
     color: black;
-    height: auto;   
+    min-height: 66vh;   
     width: 100vw;
     margin-bottom: 1em;
-    margin-top: 14em;
 }    
 .ftituloe{
     display: flex;
@@ -16,12 +15,22 @@
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    color: red;
-    height: 75vh;   
+    color: red;  
     width: 100vw;
+    min-height: 66vh;
     margin-bottom: 1em;
     margin-top: 1em;
 }  
 .minw{
     min-width: 15em;
+}
+.img-fluid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

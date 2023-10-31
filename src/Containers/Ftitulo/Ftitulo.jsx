@@ -23,7 +23,7 @@ const Ftitulo = (props) => {
     }else{
         return (
             <Container className="ftitulo">
-                <Row>
+                <Row className="center">
                     {ADIOS.prod.prod.map((prod, i) => (
                         <Col key={i} xs={6} sm={6} md={4} xl={2} className="img-fluid minw">
                             <ProductCard data={prod} />

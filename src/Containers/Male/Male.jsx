@@ -11,10 +11,10 @@ const Male = (props) => {
 
     return (
         <Container className="home">
-            <Row>
+            <Row className="female-home">
                 {
                     productGender.Gender.map((male, index) => (
-                        <Col key={index} xs={6} sm={6} md={4} xl={2} className="minw">
+                        <Col key={index} xs={12} sm={12} md={4} xl={2} className="minw">
                             <ProductCard data={male} key={index} />
                         </Col>
                     ))
