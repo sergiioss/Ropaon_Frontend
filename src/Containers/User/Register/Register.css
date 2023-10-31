@@ -2,9 +2,9 @@
     display: flex;
     justify-content:center;
     align-items: center;
-    color: black;
-    height: 80vh;   
+    color: black;   
     width: 100vw;
+    margin-top: 1rem;
 } 
 .Register{
     max-width: 25em;
@@ -28,4 +28,14 @@
 .msgIsOk{
     color:green;
     font-size:20px;
+}
+
+@media (max-width:768px){
+    .Register{
+        min-width: 0;
+        width: 100%;
+    } 
+    .buttonr{
+        margin-bottom: 1rem;
+    }
 }
